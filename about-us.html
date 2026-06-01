@@ -7,6 +7,200 @@
 <title>About Us | MK Damp and Timber LTD</title>
 
 <link rel="stylesheet" href="css/style.css">
+<style>
+  .primary, .btn-primary, .btn-secondary, .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3rem;
+    padding: 0.85rem 1.4rem;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+  }
+
+  .primary,
+  .btn-primary {
+    background: linear-gradient(135deg, rgba(248, 194, 95, 0.95), rgba(255, 214, 121, 0.85));
+    color: #08101a;
+    border: 1px solid transparent;
+  }
+
+  .btn-secondary,
+  .btn-ghost,
+  a.primary {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .primary:hover,
+  .btn-primary:hover,
+  .btn-secondary:hover,
+  .btn-ghost:hover,
+  a.primary:hover {
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 900px) {
+    .page-shell,
+    .page-content,
+    .wrap,
+    .hero,
+    .hero-header,
+    .hero-panel,
+    .hero-banner,
+    .hero-content,
+    .glass-panel,
+    .panel,
+    .card,
+    .service-card,
+    .preview-cell,
+    .method,
+    .faq,
+    .cta-banner,
+    .contact-cards,
+    .methods,
+    .statistics-grid,
+    .trust-logos,
+    .problem-solution,
+    .services,
+    .systems,
+    .process,
+    .benefits,
+    .masonry,
+    .gallery {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+
+    .split,
+    .grid,
+    .grid-2,
+    .grid-3,
+    .grid-4,
+    .hero,
+    .services,
+    .systems,
+    .process,
+    .benefits,
+    .preview-gallery .gallery-grid,
+    .gallery,
+    .contact-cards,
+    .methods,
+    .statistics-grid,
+    .trust-logos,
+    .problem-solution,
+    .faq,
+    .masonry {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      gap: 1rem !important;
+    }
+
+    .hero-header,
+    .hero,
+    .hero-panel,
+    .hero-banner {
+      min-height: auto !important;
+      padding: 2rem 1rem 2.5rem !important;
+    }
+
+    .hero-actions,
+    .hero-links,
+    .cta-actions,
+    .form-actions,
+    .gallery .btn,
+    .preview-gallery .btn {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 0.75rem !important;
+    }
+
+    .form-row {
+      grid-template-columns: 1fr !important;
+    }
+
+    .form-actions {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: stretch !important;
+    }
+
+    .btn,
+    .primary,
+    .btn-primary,
+    .btn-secondary,
+    .btn-ghost,
+    a.primary {
+      width: 100% !important;
+      justify-content: center !important;
+    }
+
+    .nav-action {
+      width: 100% !important;
+    }
+
+    .footer-grid {
+      grid-template-columns: 1fr !important;
+    }
+
+    .footer-bottom {
+      flex-direction: column !important;
+      align-items: flex-start !important;
+    }
+
+    .footer-social {
+      justify-content: flex-start !important;
+    }
+
+    .anchor-nav {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      padding: 1rem !important;
+    }
+
+    .anchor-nav a {
+      padding: 0.85rem !important;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .section {
+      padding: 2rem 0 !important;
+    }
+
+    .page-content,
+    .wrap {
+      padding: 0 0.9rem 2rem !important;
+    }
+
+    .hero-actions,
+    .hero-links,
+    .cta-actions,
+    .form-actions {
+      gap: 0.6rem !important;
+    }
+
+    .service-card-content,
+    .card,
+    .panel,
+    .glass-panel,
+    .method,
+    .faq-item button {
+      padding: 1rem !important;
+    }
+
+    .hero-header,
+    .hero,
+    .hero-panel {
+      padding: 1.75rem 1rem 2rem !important;
+    }
+  }
+</style>
 	<meta name="description" content="MK Damp and Timber LTD is a contractor with over 25 years of experience in damp proofing, wet rot, dry rot, roofing and general building." />
 	<style>
 		:root {
@@ -314,9 +508,49 @@
 			</div>
 		</section>
 
-		<footer>
-			<p>MK Damp and Timber LTD is registered company number 14163466. Registered office address: 31 High Street, Winslow, Buckinghamshire, United Kingdom, MK18 3HE.</p>
-		</footer>
+  <footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo">MK Damp &amp; Timber LTD</a>
+      <p>Dependable damp proofing, rot repair and roofing services across Milton Keynes, Watford and London.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Quick links</h4>
+      <a href="about-us.html">About us</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="contact-us.html">Contact us</a>
+    </div>
+    <div class="footer-services">
+      <h4>Services</h4>
+      <a href="damp-survey.html">Damp survey</a>
+      <a href="damp-proofing.html">Damp proofing</a>
+      <a href="wet-dry-rot.html">Wet &amp; dry rot</a>
+      <a href="structural-repairs.html">Structural repairs</a>
+      <a href="pitched-roofing.html">Pitched roofing</a>
+      <a href="flat-roofing.html">Flat roofing</a>
+      <a href="i-beam-fitting.html">I-beam fitting</a>
+    </div>
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p><a href="tel:+441923904441">01923 904441</a></p>
+      <p><a href="tel:+447808665460">07808 665460</a></p>
+      <p><a href="mailto:info@mkdampandtimber.co.uk">info@mkdampandtimber.co.uk</a></p>
+      <p>31 High Street, Winslow, Buckinghamshire, MK18 3HE</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>
+      <p>© 2026 MK Damp &amp; Timber LTD. Company No. 14163466.</p>
+    </div>
+    <div class="footer-social">
+      <a href="#" aria-label="Facebook">Facebook</a>
+      <a href="#" aria-label="Instagram">Instagram</a>
+      <a href="#" aria-label="LinkedIn">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
 	</div>
 	<script>
 		const counters = document.querySelectorAll('[data-count]');
