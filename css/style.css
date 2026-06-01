@@ -428,6 +428,7 @@ strong {
   }
 
   .nav-dropdown {
+    display: block;
     width: 100%;
   }
 
@@ -440,10 +441,15 @@ strong {
   .nav-dropdown-menu {
     position: static;
     width: 100%;
+    max-width: 100%;
     min-width: 0;
+    flex-direction: column;
+    align-items: stretch;
     box-shadow: none;
     border: 1px solid rgba(255, 255, 255, 0.08);
     margin-top: 0.5rem;
+    padding: 0.5rem 0;
+    overflow: hidden;
   }
 
   .nav-dropdown.open .nav-dropdown-menu {
@@ -453,6 +459,10 @@ strong {
   .nav-dropdown-toggle {
     display: inline-flex;
     justify-content: space-between;
+    width: 100%;
+  }
+
+  .nav-dropdown-link {
     width: 100%;
   }
 
