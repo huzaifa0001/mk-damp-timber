@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	
+	<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | MK Damp and Timber LTD</title>
+
+<link rel="stylesheet" href="css/style.css">
+	<meta name="description" content="Contact MK Damp and Timber for damp proofing, timber repairs, roofing and emergency callouts. Call 01923 904441 or 07808 665460." />
+	<style>
+		:root{
+			--bg:#071019; --card:rgba(255,255,255,0.04); --glass:rgba(255,255,255,0.06);
+			--accent:#f9bf5e; --muted:#9fb0c6; --text:#eef4fb; --glass-border:rgba(255,255,255,0.08);
+			font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+		}
+		*{box-sizing:border-box}
+		body{margin:0;background:linear-gradient(180deg,#051017 0%, #071019 100%);color:var(--text);}
+		a{color:inherit}
+		.wrap{max-width:1200px;margin:0 auto;padding:2rem}
+		.split{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
+		.left, .right{border-radius:18px;padding:1.5rem;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid var(--glass-border)}
+		h1{margin:0 0 0.5rem;font-size:2.25rem}
+		p.lead{color:var(--muted);margin:0 0 1rem}
+		.contact-cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
+		.card{background:var(--card);padding:1rem;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+		.card h4{margin:0 0 .35rem;color:var(--accent)}
+		.methods{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
+		.method{background:var(--glass);padding:1rem;border-radius:12px;border:1px solid var(--glass-border);text-align:center}
+		.method strong{display:block;font-size:1.1rem;color:var(--accent)}
+		/* Glass form */
+		form.contact-form{background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:1.25rem;border-radius:16px;border:1px solid var(--glass-border);backdrop-filter: blur(8px)}
+		.form-row{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:0.75rem}
+		.form-row.full{grid-template-columns:1fr}
+		input, textarea, select{width:100%;padding:0.75rem;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)}
+		textarea{min-height:140px;resize:vertical}
+		.btn{display:inline-block;padding:0.85rem 1.25rem;border-radius:999px;border:none;font-weight:700;cursor:pointer}
+		.btn-primary{background:var(--accent);color:#081018}
+		.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
+		.map{margin-top:1rem;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.04)}
+		.business{margin-top:1.25rem;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:1rem;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+		.emergency{margin-top:1.5rem;background:linear-gradient(90deg, rgba(249,191,94,0.12), rgba(7,14,23,0.9));padding:1rem;border-radius:12px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+		.emergency .phone{font-weight:800;color:#081018;background:#fff;padding:.6rem 1rem;border-radius:999px}
+		footer{padding:2rem 0;color:var(--muted);text-align:center}
+		@media (max-width:900px){.split{grid-template-columns:1fr}.contact-cards{grid-template-columns:1fr}}
+	</style>
+</head>
+<body>
+	
+<nav class="nav-shell" aria-label="Primary site navigation">
+  <div class="nav-inner">
+    <a href="/" class="brand">MK Damp &amp; Timber LTD</a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Open site menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="nav-links">
+      <a href="/" class="nav-link ">Home</a>
+      <a href="/about-us/" class="nav-link ">About us</a>
+      <div class="nav-dropdown">
+        <button type="button" class="nav-dropdown-toggle" aria-expanded="false">Services</button>
+        <div class="nav-dropdown-menu">
+          <a href="/damp-survey/" class="nav-dropdown-link ">Damp survey</a>
+          <a href="/damp-proofing/" class="nav-dropdown-link ">Damp proofing</a>
+          <a href="/wet-dry-rot/" class="nav-dropdown-link ">Wet &amp; dry rot</a>
+          <a href="/structural-repairs/" class="nav-dropdown-link ">Structural repairs</a>
+          <a href="/pitched-roofing/" class="nav-dropdown-link ">Pitched roofing</a>
+          <a href="/flat-roofing/" class="nav-dropdown-link ">Flat roofing</a>
+          <a href="/i-beam-fitting/" class="nav-dropdown-link ">I-beam fitting</a>
+        </div>
+      </div>
+      <a href="/gallery/" class="nav-link ">Gallery</a>
+      <a href="/testimonials/" class="nav-link ">Testimonials</a>
+      <a href="/faq/" class="nav-link ">FAQ</a>
+      <a href="/contact-us/" class="nav-link active">Contact</a>
+    </div>
+    <a href="tel:+441923904441" class="nav-action">01923 904441</a>
+  </div>
+</nav>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    const dropdownToggle = document.querySelector('.nav-dropdown-toggle');
+    const dropdown = document.querySelector('.nav-dropdown');
+
+    toggle.addEventListener('click', function () {
+      const expanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', String(!expanded));
+      links.classList.toggle('open');
+    });
+
+    const navLinks = document.querySelectorAll('.nav-link, .nav-dropdown-link');
+
+    function closeMenu() {
+      if (links.classList.contains('open')) {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+      if (dropdown && dropdown.classList.contains('open')) {
+        dropdown.classList.remove('open');
+        dropdownToggle.setAttribute('aria-expanded', 'false');
+      }
+    }
+
+    dropdownToggle && dropdownToggle.addEventListener('click', function (event) {
+      event.stopPropagation();
+      const expanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', String(!expanded));
+      dropdown.classList.toggle('open');
+    });
+
+    navLinks.forEach(function (link) {
+      link.addEventListener('click', function () {
+        closeMenu();
+      });
+    });
+
+    document.addEventListener('click', function (event) {
+      if (dropdown && !dropdown.contains(event.target) && dropdown.classList.contains('open')) {
+        dropdown.classList.remove('open');
+        dropdownToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+</script>
+
+	<div class="wrap">
+		<header>
+			<h1>Contact MK Damp and Timber</h1>
+			<p class="lead">For damp proofing, wet & dry rot, roofing, conversions and emergency callouts — get in touch for a fast, reliable quote.</p>
+		</header>
+
+		<main class="split" role="main">
+			<div class="left">
+				<section aria-labelledby="quick-contacts">
+					<h2 id="quick-contacts">Quick contact</h2>
+					<div class="contact-cards">
+						<div class="card">
+							<h4>Office</h4>
+							<p><strong>01923 904441</strong></p>
+							<p class="muted">Mon–Fri, 9:00–17:00</p>
+						</div>
+						<div class="card">
+							<h4>Mobile / Out of hours</h4>
+							<p><strong>07808 665460</strong></p>
+							<p class="muted">Emergency callout available</p>
+						</div>
+						<div class="card">
+							<h4>Email</h4>
+							<p><a href="mailto:info@mkdampandtimber.co.uk">info@mkdampandtimber.co.uk</a></p>
+							<p class="muted">Use the form for photos and site details</p>
+						</div>
+						<div class="card">
+							<h4>Address</h4>
+							<p>31 High Street, Winslow, Buckinghamshire, MK18 3HE</p>
+						</div>
+					</div>
+				</section>
+
+				<section aria-labelledby="methods" class="methods" style="margin-top:1rem">
+					<div class="method">
+						<strong>Telephone</strong>
+						<small>01923 904441</small>
+					</div>
+					<div class="method">
+						<strong>Mobile</strong>
+						<small>07808 665460</small>
+					</div>
+					<div class="method">
+						<strong>Visit</strong>
+						<small>Winslow, Buckinghamshire</small>
+					</div>
+				</section>
+
+				<section class="business" aria-labelledby="business-info">
+					<h3 id="business-info">Business information</h3>
+					<p>MK Damp and Timber LTD — Company number <strong>14163466</strong>.</p>
+					<p>We provide damp proofing, timber repairs, wet & dry rot treatment, roofing and conversions across Milton Keynes and North London.</p>
+				</section>
+
+				<section class="emergency" aria-label="Emergency call">
+					<div>
+						<strong style="display:block;color:#fff;font-size:1.05rem">Emergency callouts</strong>
+						<small style="color:rgba(255,255,255,0.9)">Rapid response for urgent damp and structural timber issues.</small>
+					</div>
+					<a class="phone" href="tel:+441923904441">01923 904441</a>
+				</section>
+			</div>
+
+			<aside class="right">
+				<section aria-labelledby="contact-form">
+					<h2 id="contact-form">Send us a message</h2>
+					<form class="contact-form" method="post" action="/contact-submit">
+						<div class="form-row">
+							<input type="text" name="name" placeholder="Your name" required>
+							<input type="tel" name="phone" placeholder="Phone number" required>
+						</div>
+						<div class="form-row">
+							<input type="email" name="email" placeholder="Email address" required>
+							<input type="text" name="postcode" placeholder="Postcode / Location">
+						</div>
+						<div class="form-row full">
+							<select name="service">
+								<option value="Damp proofing">Damp proofing</option>
+								<option value="Timber repairs">Timber repairs</option>
+								<option value="Roofing">Roofing</option>
+								<option value="Conversions">Conversions</option>
+								<option value="Other">Other</option>
+							</select>
+						</div>
+						<div class="form-row full">
+							<textarea name="message" placeholder="Tell us about the problem, include photos if possible" aria-label="Message"></textarea>
+						</div>
+						<div style="display:flex;gap:.75rem;align-items:center">
+							<button type="submit" class="btn btn-primary">Request a quote</button>
+							<button type="button" class="btn btn-ghost" onclick="document.querySelector('form.contact-form').reset()">Reset</button>
+						</div>
+					</form>
+				</section>
+
+				<section aria-labelledby="map" style="margin-top:1rem">
+					<h3 id="map">Find us</h3>
+					<div class="map">
+						<iframe width="100%" height="300" frameborder="0" style="border:0" src="https://www.google.com/maps?q=31+High+Street+Winslow+MK18+3HE&output=embed" allowfullscreen aria-hidden="false" tabindex="0"></iframe>
+					</div>
+				</section>
+			</aside>
+		</main>
+
+		<footer>
+			<p>Phone: <a href="tel:+441923904441">01923 904441</a> • Mobile: <a href="tel:+447808665460">07808 665460</a> • Email: <a href="mailto:info@mkdampandtimber.co.uk">info@mkdampandtimber.co.uk</a></p>
+			<p>Registered office: 31 High Street, Winslow, Buckinghamshire, MK18 3HE • Company No. 14163466</p>
+		</footer>
+	</div>
+</body>
+</html>
