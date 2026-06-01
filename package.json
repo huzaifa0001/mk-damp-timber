@@ -1,5 +1,5 @@
 {
-  "homepage": "https://huzaifa0001.io/mk-damp-timber",
+  "homepage": "https://huzaifa0001.github.io/mk-damp-timber",
   "name": "mk-damp-timber",
   "version": "1.0.0",
   "description": "",
@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js",
     "start": "node server.js"
-  },
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
