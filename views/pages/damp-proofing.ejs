@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <% var title = "Damp Proofing Services | MK Damp and Timber LTD" %>
+  <%- include('../partials/seo') %>
+  <meta name="description" content="Professional damp proofing services: rising damp, chemical DPC, tanking, cavity drain membranes, timber treatments and long-term guarantees." />
+  <style>
+    :root{--bg:#071019;--card:rgba(255,255,255,0.03);--accent:#f9bf5e;--muted:#9fb0c6;--text:#eef4fb;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#041018,#071019);color:var(--text)}
+    .wrap{max-width:1180px;margin:0 auto;padding:2rem}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:1.25rem;align-items:center}
+    .hero .copy h1{margin:0;font-size:2.25rem}
+    .hero .copy p{color:var(--muted)}
+    .hero .image{border-radius:12px;overflow:hidden}
+    .panel{background:rgba(16,25,39,0.95);padding:1rem;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .grid{display:grid;gap:1rem}
+    .problem-solution{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
+    .process{display:flex;gap:0.75rem;margin-top:1rem}
+    .process .card{flex:1;padding:1rem;border-radius:12px;background:var(--card);border:1px solid rgba(255,255,255,0.03)}
+    .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin-top:1rem}
+    .benefit{padding:1rem;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);text-align:center}
+    .faq{margin-top:1rem}
+    .faq-item{border-radius:10px;margin-bottom:.5rem;border:1px solid rgba(255,255,255,0.03);overflow:hidden}
+    .faq-item button{width:100%;text-align:left;padding:1rem;background:transparent;border:0;color:var(--text);display:flex;justify-content:space-between}
+    .faq-body{padding:0 1rem 1rem;color:var(--muted);display:none}
+    .cta{margin-top:1rem;padding:1rem;border-radius:12px;background:linear-gradient(90deg, rgba(249,191,94,0.12), rgba(7,14,23,0.95));display:flex;justify-content:space-between;align-items:center}
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-top:1rem}
+    .services a{display:block;padding:1rem;border-radius:10px;background:var(--card);text-align:center;border:1px solid rgba(255,255,255,0.03)}
+    form.enquiry{margin-top:1rem;display:grid;gap:.6rem}
+    input,textarea,select{width:100%;padding:.7rem;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)}
+    button.primary{background:var(--accent);color:#081018;border:none;padding:.7rem 1rem;border-radius:999px;font-weight:800}
+    @media(max-width:900px){.hero{grid-template-columns:1fr}.problem-solution{grid-template-columns:1fr}.benefits{grid-template-columns:1fr}.services{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <%- include('../partials/navbar', { currentPage: 'damp-proofing' }) %>
+  <div class="wrap">
+    <header class="hero">
+      <div class="copy">
+        <h1>Damp proofing services</h1>
+        <p>Specialists in rising damp, penetrating damp, basement tanking and cavity drainage systems. Permanent solutions, backed by experience and guarantees where appropriate.</p>
+        <div style="margin-top:1rem;display:flex;gap:.5rem;flex-wrap:wrap">
+          <a href="tel:+441923904441" style="background:var(--accent);color:#081018;padding:.6rem 1rem;border-radius:999px;font-weight:800;text-decoration:none">Call 01923 904441</a>
+          <a href="/contact-us" style="background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--text);padding:.6rem 1rem;border-radius:999px;text-decoration:none">Request a quote</a>
+        </div>
+      </div>
+      <div class="image">
+        <img src="https://mkdampandtimber.co.uk/wp-content/uploads/2022/03/damp-proofing-installation-768x512.jpeg" alt="damp proofing work">
+      </div>
+    </header>
+
+    <main>
+      <section class="panel problem-solution">
+        <div>
+          <h2>Common problems</h2>
+          <ul style="color:var(--muted)">
+            <li>Rising damp and salt contamination</li>
+            <li>Penetrating damp from leaks and blocked pointing</li>
+            <li>Cold bridges and condensation</li>
+            <li>Basement water ingress and poor drainage</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Our solutions</h2>
+          <ul style="color:var(--muted)">
+            <li>Chemical DPC installation (where appropriate)</li>
+            <li>Cavity drainage membranes and sump systems</li>
+            <li>Tanking and specialist basement waterproofing</li>
+            <li>Timber treatments and structural repairs</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="process" aria-label="Our process">
+        <div class="card">
+          <strong>Survey & diagnosis</strong>
+          <p style="color:var(--muted)">Detailed damp survey with moisture mapping and photographs.</p>
+        </div>
+        <div class="card">
+          <strong>Tailored specification</strong>
+          <p style="color:var(--muted)">Practical repair options and fixed-price proposals.</p>
+        </div>
+        <div class="card">
+          <strong>Professional installation</strong>
+          <p style="color:var(--muted)">Works completed with care, leaving sites clean and documented.</p>
+        </div>
+      </section>
+
+      <section class="grid">
+        <div class="panel">
+          <h3>Why choose us</h3>
+          <div class="benefits">
+            <div class="benefit"><strong>Experience</strong><div class="muted">Over 25 years in damp & timber</div></div>
+            <div class="benefit"><strong>Guarantees</strong><div class="muted">Written guarantees where applicable</div></div>
+            <div class="benefit"><strong>Comprehensive</strong><div class="muted">Surveys, repairs and aftercare</div></div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>FAQ</h3>
+          <div class="faq">
+            <div class="faq-item">
+              <button aria-expanded="false" onclick="toggleFAQ(this)"><span>What causes rising damp?</span><span>+</span></button>
+              <div class="faq-body">Rising damp is caused by failure of the damp-proof course or bridged DPC, allowing moisture to travel up masonry by capillary action.</div>
+            </div>
+            <div class="faq-item">
+              <button aria-expanded="false" onclick="toggleFAQ(this)"><span>Is tanking noisy or disruptive?</span><span>+</span></button>
+              <div class="faq-body">Tanking can be disruptive depending on the method; we discuss options that balance performance and disruption.</div>
+            </div>
+            <div class="faq-item">
+              <button aria-expanded="false" onclick="toggleFAQ(this)"><span>Do you offer guarantees?</span><span>+</span></button>
+              <div class="faq-body">Yes; many of our installations include written guarantees. Specifics depend on the system installed.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" style="margin-top:1rem">
+        <h3>Contact & quote</h3>
+        <p style="color:var(--muted)">For a no-obligation quote call us or request a site survey. We provide photographic reports and clear pricing.</p>
+        <form class="enquiry" method="post" action="/contact-submit" style="margin-top:.75rem">
+          <input type="text" name="name" placeholder="Name" required>
+          <input type="tel" name="phone" placeholder="Phone" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <textarea name="details" placeholder="Property address and description"></textarea>
+          <div style="display:flex;gap:.5rem;margin-top:.5rem">
+            <button class="primary" type="submit">Request quote</button>
+            <a href="tel:+441923904441" class="primary" style="background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--text);text-decoration:none;padding:.6rem 1rem;border-radius:999px">Call 01923 904441</a>
+          </div>
+        </form>
+      </section>
+
+      <section style="margin-top:1rem">
+        <h3 style="margin-bottom:.5rem">Related services</h3>
+        <div class="services">
+          <a href="/services/damp-survey">Damp survey</a>
+          <a href="/services/wet-dry-rot">Wet & dry rot</a>
+          <a href="/services/structural-repairs">Structural repairs</a>
+        </div>
+      </section>
+    </main>
+
+    <footer style="margin-top:1.25rem;color:var(--muted);text-align:center">
+      <p>MK Damp and Timber LTD — Call <a href="tel:+441923904441">01923 904441</a> or <a href="tel:+447808665460">07808 665460</a> • Company No. 14163466 • 31 High Street, Winslow, MK18 3HE</p>
+    </footer>
+  </div>
+
+  <script>
+    function toggleFAQ(btn){
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', !open);
+      const body = btn.nextElementSibling;
+      if(!open){ body.style.display='block'; btn.querySelector('span:last-child').textContent='-'; }
+      else { body.style.display='none'; btn.querySelector('span:last-child').textContent='+'; }
+    }
+  </script>
+</body>
+</html>

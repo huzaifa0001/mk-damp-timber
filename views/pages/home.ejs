@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% var title = "MK Damp &amp; Timber LTD" %>
+  <%- include('../partials/seo') %>
+  <meta name="description" content="MK Damp & Timber LTD provides damp proofing services in Milton Keynes, Watford and London with wet and dry rot treatment, roofing and general building." />
+  <style>
+    :root {
+      --bg: #09101a;
+      --surface: rgba(16, 25, 39, 0.92);
+      --accent: #f9bf5e;
+      --accent-soft: rgba(249, 191, 94, 0.16);
+      --text: #f0f4f8;
+      --muted: #9db3c1;
+      --border: rgba(255, 255, 255, 0.12);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      scroll-behavior: smooth;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; background: #080d14; color: var(--text); }
+    body { line-height: 1.55; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .page-shell { overflow-x: hidden; }
+    .hero-header {
+      position: relative;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 3rem 1.5rem 4rem;
+      background: linear-gradient(180deg, rgba(7, 14, 23, 0.88), rgba(6, 10, 16, 0.96)), url('https://mkdampandtimber.co.uk/wp-content/uploads/2022/03/Damp-proofing-walls-with-membrane-400x300.jpeg') center/cover no-repeat;
+    }
+    .hero-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top, rgba(249, 191, 94, 0.14), transparent 35%);
+      pointer-events: none;
+    }
+    .hero-copy {
+      position: relative;
+      max-width: 900px;
+      text-align: center;
+      z-index: 1;
+    }
+    .eyebrow {
+      display: inline-flex;
+      margin-bottom: 1rem;
+      padding: 0.65rem 1rem;
+      border: 1px solid rgba(249, 191, 94, 0.5);
+      border-radius: 999px;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    h1 {
+      font-size: clamp(3rem, 5vw, 5rem);
+      margin: 0;
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+    }
+    .hero-copy p {
+      max-width: 780px;
+      margin: 1.5rem auto 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem auto 0;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 3.25rem;
+      padding: 0 1.75rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--accent); color: #0f1621; }
+    .btn-secondary { background: rgba(255,255,255,0.08); color: var(--text); border-color: rgba(255,255,255,0.14); }
+    .hero-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 1.5rem; }
+    .hero-links a { color: var(--text); font-size: 0.95rem; opacity: 0.82; }
+    .anchor-nav { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1rem; padding: 1rem 1.5rem; background: rgba(10, 18, 28, 0.9); border-bottom: 1px solid rgba(255,255,255,0.08); position: sticky; top: 0; z-index: 10; }
+    .anchor-nav a { padding: 0.85rem 1rem; border-radius: 999px; background: rgba(255,255,255,0.04); text-align: center; font-size: 0.95rem; }
+    .section { padding: 4rem 1.5rem; }
+    .section-head { max-width: 760px; margin: 0 auto 2rem; text-align: center; }
+    .section-head h2 { font-size: clamp(2rem, 3vw, 3rem); margin: 0.5rem 0 0; }
+    .section-intro { color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 0.75rem; }
+    .services-grid .cards { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .service-card { position: relative; overflow: hidden; border-radius: 28px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); transition: transform 0.35s ease, box-shadow 0.35s ease; }
+    .service-card:hover { transform: translateY(-8px); box-shadow: 0 32px 80px rgba(0,0,0,0.18); }
+    .service-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at top left, rgba(249, 191, 94, 0.18), transparent 35%); pointer-events: none; }
+    .service-card img { width: 100%; min-height: 220px; object-fit: cover; filter: saturate(1.1) contrast(1.05); }
+    .service-card-content { position: relative; padding: 1.5rem; }
+    .service-card h3 { margin: 0 0 0.75rem; font-size: 1.35rem; }
+    .service-card p { margin: 0; color: var(--muted); }
+    .service-card a { color: inherit; }
+    .statistics-panel { background: linear-gradient(180deg, rgba(8, 13, 21, 0.97), rgba(13, 21, 32, 0.97)); }
+    .statistics-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); max-width: 1100px; margin: 0 auto; }
+    .stat-card { padding: 2rem; border-radius: 24px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03); text-align: center; }
+    .stat-card strong { display: block; font-size: 2.75rem; color: var(--accent); margin-bottom: 0.5rem; }
+    .stat-card span { display: block; color: var(--muted); }
+    .why-choose { max-width: 1180px; margin: 0 auto; display: grid; gap: 2rem; grid-template-columns: minmax(0, 1.2fr) 1fr; align-items: start; }
+    .why-list { display: grid; gap: 1rem; }
+    .why-item { display: grid; gap: 0.75rem; padding: 1.3rem; border-radius: 24px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); }
+    .why-item h3 { margin: 0; font-size: 1.1rem; }
+    .why-item p { margin: 0; color: var(--muted); }
+    .trust-logos { display: grid; gap: 1rem; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 1.5rem; }
+    .trust-logos img { max-height: 80px; width: auto; filter: brightness(1.1); }
+    .preview-gallery .gallery-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    .preview-cell { border-radius: 24px; overflow: hidden; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); }
+    .preview-cell figure { margin: 0; }
+    .preview-cell figcaption { padding: 1rem; font-size: 0.95rem; color: var(--muted); }
+    .testimonials { padding-bottom: 0; }
+    .testimonial-panel { max-width: 940px; margin: 0 auto; padding: 3rem 2rem; border-radius: 28px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); }
+    .testimonial-panel blockquote { margin: 0 0 1.5rem; font-size: clamp(1.1rem, 1.5vw, 1.45rem); line-height: 1.8; color: #eef5ff; }
+    .testimonial-meta { margin: 0; font-size: 0.95rem; color: var(--accent); }
+    .cta-banner { display: grid; gap: 1.5rem; padding: 3.25rem 1.5rem; background: linear-gradient(135deg, rgba(249,191,94,0.18), rgba(9,16,26,0.96)); border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .cta-banner h2 { margin: 0 0 0.75rem; font-size: clamp(2rem, 3vw, 2.8rem); }
+    .cta-banner p { margin: 0; color: var(--muted); }
+    .cta-banner .cta-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; }
+    .home-footer { padding: 2rem 1.5rem 3rem; text-align: center; color: rgba(255,255,255,0.65); font-size: 0.95rem; }
+    @media (max-width: 880px) {
+      .anchor-nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .why-choose { grid-template-columns: 1fr; }
+      .trust-logos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 620px) {
+      .hero-header { padding: 2.5rem 1rem 3rem; }
+      .hero-copy p { font-size: 1rem; }
+      .hero-actions { flex-direction: column; }
+      .anchor-nav { gap: 0.85rem; padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <%- include('../partials/navbar', { currentPage: 'home' }) %>
+  <div class="page-shell">
+    <header class="hero-header">
+      <div class="hero-copy">
+        <span class="eyebrow">Trusted Damp Proofing &amp; Timber Specialists</span>
+        <h1>MK Damp &amp; Timber LTD</h1>
+        <p>Damp proofing services in the Milton Keynes, Watford and London area. Wet and dry rot treatment, roofing and general building.</p>
+        <p>MK Damp &amp; Timber have over 25 years experience in the building industry, having worked on projects big and small. We regularly sub contract for some of the largest damp proofing and building companies in the UK. We also regularly work for local councils and have an impressive portfolio of completed projects. MK Damp and Timber are proud members of the Damp Proofing Association.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/contact-us/">Request a free quote</a>
+          <a class="btn btn-secondary" href="tel:+441923904441">Call 01923 904441</a>
+        </div>
+        <div class="hero-links">
+          <a href="#services">Explore services</a>
+          <a href="#contact">Contact us</a>
+        </div>
+      </div>
+    </header>
+
+    <nav class="anchor-nav" aria-label="Homepage navigation">
+      <a href="#services">Services</a>
+      <a href="#why-us">Why choose us</a>
+      <a href="#statistics">Statistics</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="services" class="section services-grid">
+      <div class="section-head">
+        <p class="section-intro">Featured services</p>
+        <h2>Premium service cards for every project</h2>
+      </div>
+      <div class="cards">
+        <article class="service-card">
+          <a href="https://mkdampandtimber.co.uk/services/damp-survey/">
+            <img src="https://mkdampandtimber.co.uk/wp-content/uploads/2022/03/Cloned-what-does-a-damp-survey-include-1-400x300.png" alt="Damp survey">
+            <div class="service-card-content">
+              <h3>Damp survey</h3>
+              <p>Comprehensive damp surveys and reporting to identify hidden moisture issues before they become costly.</p>
+            </div>
+          </a>
+        </article>
+        <article class="service-card">
+          <a href="https://mkdampandtimber.co.uk/services/damp-proofing-services/">
+            <img src="https://mkdampandtimber.co.uk/wp-content/uploads/2022/03/Damp-proofing-walls-with-membrane-400x300.jpeg" alt="Damp proofing services">
+            <div class="service-card-content">
+              <h3>Damp proofing services</h3>
+              <p>Specialist damp proofing solutions designed to protect walls, floors and timber throughout your property.</p>
+            </div>
+          </a>
+        </article>
+        <article class="service-card">
+          <a href="https://mkdampandtimber.co.uk/services/wet-rot-and-dry-rot-treatment/">
+            <img src="https://mkdampandtimber.co.uk/wp-content/uploads/2022/07/How-to-identify-and-treat-wet-rot-e1658784550621-400x300.jpg" alt="Wet rot and dry rot treatment">
+            <div class="service-card-content">
+              <h3>Wet rot and dry rot treatment</h3>
+              <p>Expert timber repair and treatment to restore structural strength and protect your property from decay.</p>
+            </div>
+          </a>
+        </article>
+        <article class="service-card">
+          <a href="https://mkdampandtimber.co.uk/services/structural-repairs/">
+            <img src="https://mkdampandtimber.co.uk/wp-content/uploads/2022/09/Rotten-wood-400x300.jpg" alt="Structural repairs">
+            <div class="service-card-content">
+              <h3>Structural repairs</h3>
+              <p>From timber replacement to masonry and foundation works, we deliver durable repairs that last.</p>
+            </div>
+          </a>
+        </article>
+        <article class="service-card">
+          <a href="https://mkdampandtimber.co.uk/services/pitched-flat-roofing/">
+            <img src="https://mkdampandtimber.co.uk/wp-content/uploads/2022/03/Flat-roofing-400x300.jpg" alt="Pitched &amp; flat roofing">
+            <div class="service-card-content">
+              <h3>Pitched &amp; flat roofing</h3>
+              <p>Reliable roofing solutions for pitched and flat roofs, including repair, replacement and weatherproofing.</p>
+            </div>
+          </a>
+        </article>
+        <article class="service-card">
+          <a href="https://mkdampandtimber.co.uk/services/i-beam-fitting-and-removal/">
+            <img src="https://mkdampandtimber.co.uk/wp-content/uploads/2022/10/I-beam-400x300.jpg" alt="I beam fitting and removal">
+            <div class="service-card-content">
+              <h3>I beam fitting and removal</h3>
+              <p>Professional steel beam installation and removal for safe, modern structural improvements.</p>
+            </div>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section id="statistics" class="section statistics-panel">
+      <div class="section-head">
+        <p class="section-intro">Proven performance</p>
+        <h2>Results-driven building specialists</h2>
+      </div>
+      <div class="statistics-grid">
+        <div class="stat-card">
+          <strong>25+</strong>
+          <span>Years experience</span>
+        </div>
+        <div class="stat-card">
+          <strong>6</strong>
+          <span>Core services</span>
+        </div>
+        <div class="stat-card">
+          <strong>100%</strong>
+          <span>Quality workmanship</span>
+        </div>
+        <div class="stat-card">
+          <strong>Local</strong>
+          <span>Milton Keynes, Watford &amp; London</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="why-us" class="section why-choose">
+      <div>
+        <div class="section-head" style="text-align:left;">
+          <p class="section-intro">Why choose MK Damp &amp; Timber</p>
+          <h2>Trusted expertise across damp, timber and roofing</h2>
+        </div>
+        <div class="why-list">
+          <div class="why-item">
+            <h3>Experience you can rely on</h3>
+            <p>More than 25 years of delivering damp proofing, dry rot treatment and general building work.</p>
+          </div>
+          <div class="why-item">
+            <h3>Certified and accredited</h3>
+            <p>Practical solutions from contractors who work with councils, developers and trade partners.</p>
+          </div>
+          <div class="why-item">
+            <h3>Clear communication</h3>
+            <p>Transparent quotes, practical advice and scheduled works that respect your property.</p>
+          </div>
+          <div class="why-item">
+            <h3>Comprehensive service range</h3>
+            <p>From surveys and repairs to roofing, beam fitting and complete timber treatment.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="trust-logos">
+          <img src="https://mkdampandtimber.co.uk/wp-content/uploads/2022/05/checkatrade-logo-1-1024x291.png" alt="Checkatrade logo">
+          <img src="https://mkdampandtimber.co.uk/wp-content/uploads/2022/08/DPA-cropped-jpeg.jpg" alt="Damp Proofing Association">
+          <img src="https://mkdampandtimber.co.uk/wp-content/uploads/2022/03/mybuilder-logo-e16462608899671.png" alt="MyBuilder logo">
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section preview-gallery">
+      <div class="section-head">
+        <p class="section-intro">Before &amp; after preview</p>
+        <h2>Modern project snapshots</h2>
+      </div>
+      <div class="gallery-grid">
+        <div class="preview-cell">
+          <figure>
+            <img src="https://mkdampandtimber.co.uk/wp-content/uploads/2022/03/Cloned-what-does-a-damp-survey-include-1-400x300.png" alt="Before damp survey">
+            <figcaption>Before: damp survey preparation and diagnosis.</figcaption>
+          </figure>
+        </div>
+        <div class="preview-cell">
+          <figure>
+            <img src="https://mkdampandtimber.co.uk/wp-content/uploads/2022/03/Damp-proofing-walls-with-membrane-400x300.jpeg" alt="After damp proofing">
+            <figcaption>After: damp proofing and moisture protection complete.</figcaption>
+          </figure>
+        </div>
+        <div class="preview-cell">
+          <figure>
+            <img src="https://mkdampandtimber.co.uk/wp-content/uploads/2022/07/How-to-identify-and-treat-wet-rot-e1658784550621-400x300.jpg" alt="Before rot treatment">
+            <figcaption>Before: rot and timber decay assessment.</figcaption>
+          </figure>
+        </div>
+        <div class="preview-cell">
+          <figure>
+            <img src="https://mkdampandtimber.co.uk/wp-content/uploads/2022/09/Rotten-wood-400x300.jpg" alt="After structural repairs">
+            <figcaption>After: structural repairs and restored timber strength.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="section testimonials">
+      <div class="section-head">
+        <p class="section-intro">Client feedback</p>
+        <h2>What customers say about our work</h2>
+      </div>
+      <div class="testimonial-panel" role="region" aria-label="Customer testimonial">
+        <blockquote>"Mark and Paul arrived promptly on the date arranged. Discussed the job, how he would do it etc., and we agreed on a couple of extras. Mark did an excellent job on restoring our chimneys, and left the site clean and tidy. Very pleasant to deal with; would have no hesitation in requesting his help again."</blockquote>
+        <p class="testimonial-meta">September 2021</p>
+      </div>
+    </section>
+
+    <section id="contact" class="cta-banner">
+      <div>
+        <h2>Need help, a quote or just advice?</h2>
+        <p>Call us on <a href="tel:+441923904441">01923 904441</a> or <a href="tel:+447808665460">07808 665460</a>, alternatively fill in the contact form.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn-primary" href="/contact-us/">Contact</a>
+        <a class="btn btn-secondary" href="tel:+441923904441">Call</a>
+      </div>
+    </section>
+
+    <footer class="home-footer">
+      <p>MK Damp &amp; Timber LTD | Damp proofing services in the Milton Keynes, Watford and London area. Wet and dry rot treatment, roofing and general building.</p>
+    </footer>
+  </div>
+  <script>
+    document.querySelectorAll('.anchor-nav a, .hero-links a').forEach(link => {
+      link.addEventListener('click', event => {
+        const target = event.currentTarget.getAttribute('href');
+        if (target.startsWith('#')) {
+          event.preventDefault();
+          document.querySelector(target)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

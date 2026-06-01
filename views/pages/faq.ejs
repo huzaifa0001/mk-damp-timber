@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% var title = "FAQ | MK Damp & Timber LTD" %>
+  <%- include('../partials/seo') %>
+  <meta name="description" content="Frequently asked questions for MK Damp & Timber LTD covering damp proofing, roofing, rot treatment and project enquiries." />
+</head>
+<body>
+  <div class="page-shell">
+    <%- include('../partials/navbar', { currentPage: 'faq' }) %>
+    <main class="page-content">
+      <section class="hero-panel section">
+        <div class="section-head">
+          <span class="eyebrow">Common questions answered</span>
+          <h1>FAQ for damp proofing, timber repairs and roofing</h1>
+          <p>Find expert answers to the questions clients ask most often before booking a survey or a repair.</p>
+        </div>
+        <div class="search-control">
+          <input class="input" type="search" id="faqSearch" placeholder="Search frequently asked questions" aria-label="Search FAQ" />
+          <a href="/contact-us/" class="btn">Still need help?</a>
+        </div>
+      </section>
+
+      <section class="section section-light">
+        <div class="section-head">
+          <h2>Searchable FAQ library</h2>
+          <p>Use the search field to narrow answers for damp surveys, rot treatment, roofing, structural repairs and contact enquiries.</p>
+        </div>
+        <div class="accordion" id="faqList">
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>What does a damp survey include?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The survey includes a visual inspection, moisture readings, checks for rising damp, condensation and rot, plus a written report with remedial recommendations.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>How long does damp proofing take?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Most domestic damp proofing projects complete within two to five days depending on the method and access, with follow-up plaster repairs scheduled as required.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Can wet rot be treated without replacing timber?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Where timber is still structurally sound we can treat rot and reinforce the area, but replacement is recommended when decay has progressed beyond repair.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Do you handle pitched and flat roofing?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. We provide repairs, replacements and waterproofing for both pitched and flat roofs across residential and commercial properties.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Is an engineer required for I-beam fitting?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes, structural work that involves I-beam installation should be designed or reviewed by a structural engineer. We work with engineers to deliver safe installation.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>What guarantees do you offer?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>We offer written guarantees where applicable for damp proofing, timber treatments and roofing works. Specific terms are confirmed in your quotation.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>How do I book a survey or quote?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Contact us by phone on 01923 904441 or via the contact page to arrange a survey. We respond quickly to discuss the property and schedule a visit.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="glass-panel">
+          <h2>Still have questions?</h2>
+          <p>Our team is ready to advise on damp proofing, wet rot and dry rot treatment, roofing, structural repairs and timber supports.</p>
+          <a href="/contact-us/" class="btn">Contact our experts</a>
+        </div>
+      </section>
+    </main>
+    <%- include('../partials/footer') %>
+  </div>
+  <script>
+    const faqSearch = document.getElementById('faqSearch');
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqSearch.addEventListener('input', function () {
+      const value = this.value.toLowerCase();
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question span').textContent.toLowerCase();
+        const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+        const visible = question.includes(value) || answer.includes(value);
+        item.style.display = visible ? 'block' : 'none';
+      });
+    });
+
+    faqItems.forEach(item => {
+      const button = item.querySelector('.faq-question');
+      button.addEventListener('click', () => {
+        const open = item.classList.toggle('open');
+        button.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    });
+  </script>
+</body>
+</html>

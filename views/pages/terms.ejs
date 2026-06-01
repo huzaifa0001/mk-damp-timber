@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% var title = "Terms & Conditions | MK Damp & Timber LTD" %>
+  <%- include('../partials/seo') %>
+  <meta name="description" content="Terms and conditions for MK Damp & Timber LTD detailing service agreements, liability, payment and project delivery." />
+</head>
+<body>
+  <div class="page-shell">
+    <%- include('../partials/navbar', { currentPage: 'terms' }) %>
+    <main class="page-content">
+      <section class="hero-panel section">
+        <div class="section-head">
+          <span class="eyebrow">Terms & conditions</span>
+          <h1>Terms of service</h1>
+          <p>These terms explain how MK Damp &amp; Timber LTD delivers services, manages enquiries and protects both parties during a project.</p>
+        </div>
+      </section>
+
+      <section class="section section-light">
+        <div class="content-columns">
+          <article>
+            <div class="toc-card">
+              <h4>Jump to</h4>
+              <a href="#agreement">Agreement</a>
+              <a href="#services">Services</a>
+              <a href="#payment">Payment</a>
+              <a href="#liability">Liability</a>
+              <a href="#cancellation">Cancellation</a>
+              <a href="#law">Governing law</a>
+            </div>
+          </article>
+          <article>
+            <section class="legal-section" id="agreement">
+              <h3>Agreement</h3>
+              <p>By instructing MK Damp &amp; Timber LTD, you agree to our terms and conditions, including the scope of work set out in your quotation.</p>
+            </section>
+            <section class="legal-section" id="services">
+              <h3>Services</h3>
+              <p>We provide damp proofing, wet and dry rot treatment, roofing, structural repairs and timber work. Service delivery is based on the agreed specification and any site survey findings.</p>
+            </section>
+            <section class="legal-section" id="payment">
+              <h3>Payment</h3>
+              <p>Payment terms are specified in our quotation. Deposit requests and final balances are agreed before works begin. We accept payment by bank transfer or as otherwise arranged.</p>
+            </section>
+            <section class="legal-section" id="liability">
+              <h3>Liability</h3>
+              <p>MK Damp &amp; Timber LTD aims to deliver safe, compliant work. Our liability is limited to the value of the contract and the scope of the agreed works.</p>
+            </section>
+            <section class="legal-section" id="cancellation">
+              <h3>Cancellation</h3>
+              <p>If you need to change or cancel a booking, please contact us as soon as possible. Notice requirements are set out in your quotation and may affect project timing.</p>
+            </section>
+            <section class="legal-section" id="law">
+              <h3>Governing law</h3>
+              <p>These terms are governed by the laws of England and Wales. Any disputes will be handled in accordance with applicable UK law.</p>
+            </section>
+          </article>
+        </div>
+      </section>
+    </main>
+    <%- include('../partials/footer') %>
+  </div>
+</body>
+</html>

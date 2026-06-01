@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <% var title = "Wet & Dry Rot Treatment | MK Damp and Timber LTD" %>
+  <%- include('../partials/seo') %>
+  <meta name="description" content="Wet rot and dry rot treatment from MK Damp and Timber — specialist surveys, targeted treatment and structural repairs to protect your property." />
+  <style>
+    :root{--bg:#071019;--panel:rgba(16,25,39,0.95);--accent:#f9bf5e;--muted:#9fb0c6;--text:#eef4fb;--card:rgba(255,255,255,0.03);font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#041018,#071019);color:var(--text)}
+    .wrap{max-width:1100px;margin:0 auto;padding:2rem}
+    .hero{display:grid;grid-template-columns:1fr;gap:.75rem}
+    .hero .title{display:flex;justify-content:space-between;align-items:center}
+    h1{margin:0;font-size:2rem}
+    p.lead{color:var(--muted);margin:0}
+    .compare{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
+    .card{background:var(--panel);padding:1rem;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .card h3{margin-top:0;color:var(--accent)}
+    .process{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;margin-top:1rem}
+    .process .step{background:var(--card);padding:.9rem;border-radius:10px;text-align:center}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-top:1rem}
+    .feature{padding:1rem;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);text-align:center}
+    .faq{margin-top:1rem}
+    .faq-item{border-radius:10px;margin-bottom:.5rem;border:1px solid rgba(255,255,255,0.03);overflow:hidden}
+    .faq-item button{width:100%;text-align:left;padding:1rem;background:transparent;border:0;color:var(--text);display:flex;justify-content:space-between}
+    .faq-body{padding:0 1rem 1rem;color:var(--muted);display:none}
+    .cta{margin-top:1rem;padding:1rem;border-radius:12px;background:linear-gradient(90deg, rgba(249,191,94,0.12), rgba(7,14,23,0.95));display:flex;justify-content:space-between;align-items:center}
+    form.enquiry{margin-top:1rem;display:grid;gap:.6rem}
+    input,textarea,select{width:100%;padding:.7rem;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)}
+    button.primary{background:var(--accent);color:#081018;border:none;padding:.7rem 1rem;border-radius:999px;font-weight:800}
+    @media(max-width:900px){.compare{grid-template-columns:1fr}.process{grid-template-columns:1fr}.features{grid-template-columns:1fr}}
+  </style>
+
+</head>
+<body>
+  <%- include('../partials/navbar', { currentPage: 'wet-dry-rot' }) %>
+  <div class="wrap">
+    <header class="hero">
+      <div class="title">
+        <div>
+          <h1>Wet rot & dry rot treatment</h1>
+          <p class="lead">Expert diagnosis and targeted remedial works to protect structural timbers and stop decay before it spreads.</p>
+        </div>
+        <div style="text-align:right">
+          <a href="tel:+441923904441" style="background:var(--accent);color:#081018;padding:.6rem 1rem;border-radius:999px;font-weight:800;text-decoration:none">Call 01923 904441</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="compare" aria-label="Wet vs Dry rot comparison">
+        <div class="card" id="wet-rot">
+          <h3>Wet rot</h3>
+          <p style="color:var(--muted)">Wet rot occurs where timber remains damp for extended periods due to leaks, poor ventilation or water ingress. It causes timber to soften and can rapidly reduce structural strength if untreated.</p>
+          <h4 style="margin-top:.75rem">Signs</h4>
+          <ul style="color:var(--muted)">
+            <li>Soft, spongy timber</li>
+            <li>Dark staining and a musty smell</li>
+            <li>Blistering or peeling paint in affected areas</li>
+          </ul>
+        </div>
+
+        <div class="card" id="dry-rot">
+          <h3>Dry rot</h3>
+          <p style="color:var(--muted)">Dry rot is caused by specific fungi that can transport moisture, allowing decay to spread from damp to otherwise dry timber. It can be more destructive and often requires careful removal and structural repairs.</p>
+          <h4 style="margin-top:.75rem">Signs</h4>
+          <ul style="color:var(--muted)">
+            <li>Fruiting bodies (mushroom-like growths)</li>
+            <li>Timber becomes dry, brittle and cracked</li>
+            <li>Orange/rust-coloured spores and a strong musty smell</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="panel" style="margin-top:1rem">
+        <h3>Treatment process</h3>
+        <div class="process">
+          <div class="step">
+            <strong>Survey</strong>
+            <div style="color:var(--muted)">Detailed inspection and moisture readings</div>
+          </div>
+          <div class="step">
+            <strong>Containment</strong>
+            <div style="color:var(--muted)">Isolate affected areas to stop spread</div>
+          </div>
+          <div class="step">
+            <strong>Treatment</strong>
+            <div style="color:var(--muted)">Timber replacement, resin repairs or chemical treatments</div>
+          </div>
+          <div class="step">
+            <strong>Prevention</strong>
+            <div style="color:var(--muted)">Fix leaks, improve ventilation and damp-proof where required</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="features">
+        <div class="feature">
+          <strong>Targeted repairs</strong>
+          <div style="color:var(--muted)">Minimal invasive repairs focused on structural integrity.</div>
+        </div>
+        <div class="feature">
+          <strong>Long-term protection</strong>
+          <div style="color:var(--muted)">Timber treatments and damp control measures to prevent recurrence.</div>
+        </div>
+        <div class="feature">
+          <strong>Documentation</strong>
+          <div style="color:var(--muted)">Full report and photographic records for insurance or resale.</div>
+        </div>
+      </section>
+
+      <section class="panel" style="margin-top:1rem">
+        <h3>FAQ</h3>
+        <div class="faq">
+          <div class="faq-item">
+            <button aria-expanded="false" onclick="toggleFAQ(this)"><span>Can dry rot spread through a building?</span><span>+</span></button>
+            <div class="faq-body">Yes, dry rot can spread via mycelium and requires prompt professional treatment and removal of affected timbers.</div>
+          </div>
+          <div class="faq-item">
+            <button aria-expanded="false" onclick="toggleFAQ(this)"><span>Do you replace timber?</span><span>+</span></button>
+            <div class="faq-body">Where necessary we replace decayed structural timbers and carry out resin repairs or reinforcement as appropriate.</div>
+          </div>
+          <div class="faq-item">
+            <button aria-expanded="false" onclick="toggleFAQ(this)"><span>How much will treatment cost?</span><span>+</span></button>
+            <div class="faq-body">Costs vary by extent of decay and access; we recommend a survey to provide a fixed-price quote.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <div>
+          <strong style="display:block;color:#fff">Need urgent timber repairs?</strong>
+          <small style="color:rgba(255,255,255,0.9)">Contact our team for survey, treatment and structural repair.</small>
+        </div>
+        <div style="display:flex;gap:.5rem;align-items:center">
+          <a href="/contact-us" style="background:transparent;border:1px solid rgba(255,255,255,0.04);padding:.6rem 1rem;border-radius:999px;color:var(--text);text-decoration:none">Enquire online</a>
+          <a href="tel:+441923904441" style="background:var(--accent);color:#081018;padding:.6rem 1rem;border-radius:999px;font-weight:800;text-decoration:none">Call 01923 904441</a>
+        </div>
+      </section>
+
+      <section style="margin-top:1rem">
+        <div class="card">
+          <h4>Service enquiry</h4>
+          <form class="enquiry" method="post" action="/service-enquiry">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="tel" name="phone" placeholder="Phone number" required>
+            <input type="email" name="email" placeholder="Email address" required>
+            <textarea name="details" placeholder="Brief description / address / access notes"></textarea>
+            <div style="display:flex;gap:.5rem;margin-top:.5rem">
+              <button class="primary" type="submit">Request survey</button>
+              <button type="button" onclick="document.querySelector('.enquiry').reset()" style="background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--text);padding:.6rem 1rem;border-radius:999px">Reset</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <footer style="margin-top:1rem;color:var(--muted);text-align:center">
+        <p>MK Damp and Timber LTD • 01923 904441 • 07808 665460 • info@mkdampandtimber.co.uk</p>
+        <p>Company No. 14163466 • 31 High Street, Winslow, Buckinghamshire, MK18 3HE</p>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    function toggleFAQ(btn){
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', !open);
+      const body = btn.nextElementSibling;
+      if(!open){ body.style.display='block'; btn.querySelector('span:last-child').textContent='-'; }
+      else { body.style.display='none'; btn.querySelector('span:last-child').textContent='+'; }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% var title = "Project Gallery | MK Damp & Timber LTD" %>
+  <%- include('../partials/seo') %>
+  <meta name="description" content="Explore the MK Damp & Timber project gallery with before and after images, category filters and a premium masonry presentation." />
+</head>
+<body>
+  <div class="page-shell">
+    <%- include('../partials/navbar', { currentPage: 'gallery' }) %>
+    <main class="page-content">
+      <section class="hero-panel section">
+        <div class="section-head">
+          <span class="eyebrow">Visual proof of quality</span>
+          <h1>Gallery of completed MK Damp & Timber projects</h1>
+          <p>Browse award-calibre damp proofing, structural repairs, roofing and timber restoration work from Milton Keynes, Watford and London.</p>
+        </div>
+        <div class="stats-grid">
+          <div class="stats-card">
+            <strong>120+</strong>
+            <span>Completed projects</span>
+          </div>
+          <div class="stats-card">
+            <strong>85%</strong>
+            <span>Repeat or referral clients</span>
+          </div>
+          <div class="stats-card">
+            <strong>50+</strong>
+            <span>Before &amp; after transformations</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-light">
+        <div class="section-head">
+          <span class="eyebrow">Gallery filters</span>
+          <h2>Find the work that matches your project</h2>
+          <p>Sort by service type and view every phase with a modern masonry gallery and lightbox experience.</p>
+        </div>
+        <div class="filter-bar" role="tablist" aria-label="Project categories">
+          <button type="button" class="filter-button active" data-filter="all">All</button>
+          <button type="button" class="filter-button" data-filter="damp-proofing">Damp proofing</button>
+          <button type="button" class="filter-button" data-filter="wet-rot">Wet rot</button>
+          <button type="button" class="filter-button" data-filter="roofing">Roofing</button>
+          <button type="button" class="filter-button" data-filter="timber">Timber repair</button>
+          <button type="button" class="filter-button" data-filter="structural">Structural</button>
+        </div>
+        <div class="masonry" id="galleryGrid">
+          <article class="project-card" data-category="damp-proofing" tabindex="0" role="button" aria-label="Open damp proofing project image" data-src="https://mkdampandtimber.co.uk/wp-content/uploads/2022/03/Damp-proofing-walls-with-membrane-400x300.jpeg">
+            <img src="https://mkdampandtimber.co.uk/wp-content/uploads/2022/03/Damp-proofing-walls-with-membrane-400x300.jpeg" alt="Damp proofing membrane installation">
+            <div class="project-card-content">
+              <h3 class="project-card-title">Wall damp proofing installation</h3>
+              <p class="project-card-meta">Internal membrane application with finish repairs and moisture control.</p>
+            </div>
+          </article>
+          <article class="project-card" data-category="wet-rot" tabindex="0" role="button" aria-label="Open wet rot treatment image" data-src="https://mkdampandtimber.co.uk/wp-content/uploads/2022/07/How-to-identify-and-treat-wet-rot-e1658784550621-400x300.jpg">
+            <img src="https://mkdampandtimber.co.uk/wp-content/uploads/2022/07/How-to-identify-and-treat-wet-rot-e1658784550621-400x300.jpg" alt="Wet rot timber repair">
+            <div class="project-card-content">
+              <h3 class="project-card-title">Wet rot timber restoration</h3>
+              <p class="project-card-meta">Precision repair of decayed timber and moisture management for long-term durability.</p>
+            </div>
+          </article>
+          <article class="project-card" data-category="roofing" tabindex="0" role="button" aria-label="Open flat roofing project image" data-src="https://mkdampandtimber.co.uk/wp-content/uploads/2022/03/Flat-roofing-400x300.jpg">
+            <img src="https://mkdampandtimber.co.uk/wp-content/uploads/2022/03/Flat-roofing-400x300.jpg" alt="Flat roof installation">
+            <div class="project-card-content">
+              <h3 class="project-card-title">Flat roof renewal</h3>
+              <p class="project-card-meta">Weatherproof roof replacement on a residential extension with clean detailing.</p>
+            </div>
+          </article>
+          <article class="project-card" data-category="structural" tabindex="0" role="button" aria-label="Open structural repair project image" data-src="https://mkdampandtimber.co.uk/wp-content/uploads/2022/09/Rotten-wood-400x300.jpg">
+            <img src="https://mkdampandtimber.co.uk/wp-content/uploads/2022/09/Rotten-wood-400x300.jpg" alt="Structural timber repair">
+            <div class="project-card-content">
+              <h3 class="project-card-title">Structural timber stabilisation</h3>
+              <p class="project-card-meta">Targeted timber repairs with waterproofing and reinforcement where strength matters.</p>
+            </div>
+          </article>
+          <article class="project-card" data-category="timber" tabindex="0" role="button" aria-label="Open timber repair project image" data-src="https://mkdampandtimber.co.uk/wp-content/uploads/2022/10/I-beam-400x300.jpg">
+            <img src="https://mkdampandtimber.co.uk/wp-content/uploads/2022/10/I-beam-400x300.jpg" alt="I beam fitting project">
+            <div class="project-card-content">
+              <h3 class="project-card-title">I-beam installation</h3>
+              <p class="project-card-meta">Steel beam fitting for safe load-bearing conversion and timber support.</p>
+            </div>
+          </article>
+          <article class="project-card" data-category="roofing" tabindex="0" role="button" aria-label="Open pitched roofing project image" data-src="https://mkdampandtimber.co.uk/wp-content/uploads/2022/03/Cloned-what-does-a-damp-survey-include-1-400x300.png">
+            <img src="https://mkdampandtimber.co.uk/wp-content/uploads/2022/03/Cloned-what-does-a-damp-survey-include-1-400x300.png" alt="Roof inspection and project planning">
+            <div class="project-card-content">
+              <h3 class="project-card-title">Survey-driven roof design</h3>
+              <p class="project-card-meta">Detailed roof inspections, planning and execution for reliable finishes.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <span class="eyebrow">Before &amp; after</span>
+          <h2>Project turnarounds that demonstrate our craftsmanship</h2>
+          <p>Each transformation shows how we restore damaged buildings, prevent recurrence and leave a clean finish.</p>
+        </div>
+        <div class="before-after">
+          <div class="before-after-card">
+            <figure>
+              <img src="https://mkdampandtimber.co.uk/wp-content/uploads/2022/03/Damp-proofing-walls-with-membrane-400x300.jpeg" alt="Before damp proofing">
+              <figcaption>Before: damp walls with salt staining.</figcaption>
+            </figure>
+            <figure>
+              <img src="https://mkdampandtimber.co.uk/wp-content/uploads/2022/03/Flat-roofing-400x300.jpg" alt="After damp proofing">
+              <figcaption>After: fully sealed, moisture-controlled finish.</figcaption>
+            </figure>
+          </div>
+          <div class="before-after-card">
+            <figure>
+              <img src="https://mkdampandtimber.co.uk/wp-content/uploads/2022/07/How-to-identify-and-treat-wet-rot-e1658784550621-400x300.jpg" alt="Before wet rot repair">
+              <figcaption>Before: wet rot damage on timber joists.</figcaption>
+            </figure>
+            <figure>
+              <img src="https://mkdampandtimber.co.uk/wp-content/uploads/2022/10/I-beam-400x300.jpg" alt="After wet rot repair">
+              <figcaption>After: repaired timber and structural support installed.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-light">
+        <div class="glass-panel">
+          <h2>Ready to bring your project into the gallery?</h2>
+          <p>Contact MK Damp &amp; Timber LTD for a professional survey, tailored quote and reliable project delivery across Milton Keynes, Watford and London.</p>
+          <div style="margin-top:1.5rem; display:flex; flex-wrap:wrap; gap:1rem;">
+            <a href="/contact-us/" class="btn">Request a free survey</a>
+            <a href="tel:+441923904441" class="btn btn-secondary">Call 01923 904441</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <%- include('../partials/footer') %>
+
+    <div class="lightbox-overlay" id="lightboxOverlay" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="lightbox-card">
+        <img id="lightboxImage" src="" alt="Expanded gallery image">
+        <div class="lightbox-footer">
+          <span id="lightboxCaption">Project image</span>
+          <button class="lightbox-close btn-tertiary" type="button" id="closeLightbox">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const filters = document.querySelectorAll('.filter-button');
+    const cards = document.querySelectorAll('.project-card');
+    const overlay = document.getElementById('lightboxOverlay');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const closeLightbox = document.getElementById('closeLightbox');
+
+    filters.forEach(button => {
+      button.addEventListener('click', () => {
+        filters.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        const filter = button.dataset.filter;
+        cards.forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.style.display = 'inline-flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    cards.forEach(card => {
+      const openLightbox = () => {
+        const src = card.dataset.src;
+        const alt = card.querySelector('img').alt;
+        lightboxImage.src = src;
+        lightboxImage.alt = alt;
+        lightboxCaption.textContent = alt;
+        overlay.classList.add('open');
+        overlay.setAttribute('aria-hidden', 'false');
+      };
+      card.addEventListener('click', openLightbox);
+      card.addEventListener('keypress', event => {
+        if (event.key === 'Enter') openLightbox();
+      });
+    });
+
+    closeLightbox.addEventListener('click', () => {
+      overlay.classList.remove('open');
+      overlay.setAttribute('aria-hidden', 'true');
+    });
+
+    overlay.addEventListener('click', event => {
+      if (event.target === overlay) {
+        overlay.classList.remove('open');
+        overlay.setAttribute('aria-hidden', 'true');
+      }
+    });
+  </script>
+</body>
+</html>
