@@ -253,12 +253,16 @@
 <nav class="nav-shell" aria-label="Primary site navigation">
   <div class="nav-inner">
     <a href="/mk-damp-timber/" class="brand">MK Damp &amp; Timber LTD</a>
-    <button class="nav-toggle" aria-expanded="false" aria-label="Open site menu">
+    <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open site menu">
       <span></span>
       <span></span>
       <span></span>
     </button>
-    <div class="nav-links">
+    <div class="nav-links" id="primary-navigation">
+      <button type="button" class="nav-close" aria-label="Close site menu">
+        <span></span>
+        <span></span>
+      </button>
       <a href="/mk-damp-timber/" class="nav-link ">Home</a>
       <a href="/mk-damp-timber/about-us" class="nav-link ">About us</a>
       <div class="nav-dropdown">
@@ -280,32 +284,47 @@
     </div>
     <a href="tel:+441923904441" class="nav-action">01923 904441</a>
   </div>
+  <div class="nav-overlay" aria-hidden="true"></div>
 </nav>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const toggle = document.querySelector('.nav-toggle');
     const links = document.querySelector('.nav-links');
+    const closeButton = document.querySelector('.nav-close');
+    const overlay = document.querySelector('.nav-overlay');
     const dropdownToggle = document.querySelector('.nav-dropdown-toggle');
     const dropdown = document.querySelector('.nav-dropdown');
 
-    toggle.addEventListener('click', function () {
-      const expanded = this.getAttribute('aria-expanded') === 'true';
-      this.setAttribute('aria-expanded', String(!expanded));
-      links.classList.toggle('open');
-    });
+    if (!toggle || !links) return;
 
     const navLinks = document.querySelectorAll('.nav-link, .nav-dropdown-link');
 
-    function closeMenu() {
-      if (links.classList.contains('open')) {
-        links.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-      }
+    function setMenuOpen(open) {
+      links.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+      document.body.classList.toggle('nav-open', open);
+
       if (dropdown && dropdown.classList.contains('open')) {
         dropdown.classList.remove('open');
         dropdownToggle.setAttribute('aria-expanded', 'false');
       }
+
+      if (open && closeButton) {
+        closeButton.focus({ preventScroll: true });
+      }
     }
+
+    function closeMenu() {
+      setMenuOpen(false);
+    }
+
+    toggle.addEventListener('click', function () {
+      const expanded = this.getAttribute('aria-expanded') === 'true';
+      setMenuOpen(!expanded);
+    });
+
+    closeButton && closeButton.addEventListener('click', closeMenu);
+    overlay && overlay.addEventListener('click', closeMenu);
 
     dropdownToggle && dropdownToggle.addEventListener('click', function (event) {
       event.stopPropagation();
@@ -321,9 +340,26 @@
     });
 
     document.addEventListener('click', function (event) {
+      if (links.classList.contains('open') && !links.contains(event.target) && !toggle.contains(event.target)) {
+        closeMenu();
+      }
+
       if (dropdown && !dropdown.contains(event.target) && dropdown.classList.contains('open')) {
         dropdown.classList.remove('open');
         dropdownToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && links.classList.contains('open')) {
+        closeMenu();
+        toggle.focus({ preventScroll: true });
+      }
+    });
+
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 768 && links.classList.contains('open')) {
+        closeMenu();
       }
     });
   });
