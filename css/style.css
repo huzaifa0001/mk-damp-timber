@@ -243,12 +243,17 @@ strong {
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   animation: fadeUp 0.6s ease both;
+  transition:
+    transform var(--motion-base) var(--ease-premium),
+    box-shadow var(--motion-base) var(--ease-premium),
+    border-color var(--motion-base) ease,
+    background var(--motion-base) ease;
 }
 
 .card:hover, .panel:hover, .project-card:hover, .faq-item:hover {
   transform: translateY(-4px);
   border-color: rgba(56, 189, 248, 0.4);
-  box-shadow: 0 28px 60px rgba(8, 15, 27, 0.42);
+  box-shadow: 0 28px 60px rgba(15, 23, 42, 0.16);
 }
 
 .btn, .input, .select, .textarea {
@@ -285,6 +290,17 @@ strong {
 .btn:hover {
   transform: translateY(-3px);
   animation: pulseGlow 0.8s ease;
+}
+
+.btn:active,
+.primary:active,
+.btn-primary:active,
+.btn-secondary:active,
+.btn-ghost:active,
+.nav-link:active,
+.nav-dropdown-link:active,
+.nav-action:active {
+  transform: translateY(0) scale(0.985);
 }
 
 .btn-secondary {
@@ -833,6 +849,54 @@ strong {
     background: rgba(248, 250, 255, 0.92);
     border-color: rgba(37, 99, 235, 0.1);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    display: flex;
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    transform: translateY(-6px);
+    pointer-events: none;
+    transition:
+      max-height var(--motion-slow) var(--ease-premium),
+      opacity var(--motion-base) ease,
+      padding var(--motion-base) ease,
+      margin var(--motion-base) ease,
+      transform var(--motion-base) var(--ease-premium);
+  }
+
+  .nav-dropdown.open .nav-dropdown-menu {
+    display: flex;
+    max-height: 28rem;
+    opacity: 1;
+    padding: 0.75rem;
+    margin-top: 0.55rem;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .nav-dropdown.open .nav-dropdown-toggle {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.14), rgba(56, 189, 248, 0.16));
+    color: var(--accent-strong);
+    border-color: rgba(37, 99, 235, 0.2);
+  }
+
+  .nav-dropdown-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3rem;
+    border: 1px solid rgba(37, 99, 235, 0.08);
+    background: rgba(255, 255, 255, 0.72);
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.04);
+  }
+
+  .nav-dropdown-link:hover,
+  .nav-dropdown-link:focus-visible {
+    background: var(--secondary-soft);
+    color: var(--accent-strong);
+    border-color: rgba(56, 189, 248, 0.28);
+    transform: translateX(-2px);
   }
 }
 
@@ -1429,6 +1493,85 @@ strong {
   .section-head {
     margin-bottom: 1.5rem;
   }
+}
+
+.reveal-in {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-in {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+    transition:
+      opacity var(--motion-slow) var(--ease-premium) var(--reveal-delay, 0ms),
+      transform var(--motion-slow) var(--ease-premium) var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+  }
+
+  .reveal-in.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    will-change: auto;
+  }
+}
+
+.service-card,
+.project-card,
+.method,
+.feature-card,
+.team-card,
+.timeline-card,
+.timeline-step,
+.stats-card,
+.contact-card,
+.counter-card {
+  transition:
+    transform var(--motion-base) var(--ease-premium),
+    box-shadow var(--motion-base) var(--ease-premium),
+    border-color var(--motion-base) ease,
+    background var(--motion-base) ease;
+}
+
+@media (hover: hover) {
+  .service-card:hover,
+  .method:hover,
+  .feature-card:hover,
+  .team-card:hover,
+  .timeline-card:hover,
+  .timeline-step:hover,
+  .stats-card:hover,
+  .contact-card:hover,
+  .counter-card:hover {
+    transform: translate3d(0, -5px, 0);
+    border-color: rgba(56, 189, 248, 0.34);
+    box-shadow: 0 24px 56px rgba(15, 23, 42, 0.14);
+  }
+
+  .service-card:hover img,
+  .project-card:hover img,
+  .hero-card:hover img,
+  .gallery img:hover,
+  .before-after-card:hover img {
+    transform: scale(1.025);
+  }
+}
+
+.service-card img,
+.project-card img,
+.hero-card img,
+.gallery img,
+.before-after-card img {
+  transition: transform var(--motion-slow) var(--ease-premium), filter var(--motion-base) ease;
+  will-change: transform;
+}
+
+.service-card,
+.project-card,
+.hero-card,
+.before-after-card {
+  overflow: hidden;
 }
 
 @keyframes pageEntrance {
