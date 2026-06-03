@@ -22,17 +22,17 @@
 
   .primary,
   .btn-primary {
-    background: linear-gradient(135deg, rgba(248, 194, 95, 0.95), rgba(255, 214, 121, 0.85));
-    color: #08101a;
+    background: linear-gradient(135deg, var(--accent), var(--secondary));
+    color: #ffffff;
     border: 1px solid transparent;
   }
 
   .btn-secondary,
   .btn-ghost,
   a.primary {
-    background: rgba(255, 255, 255, 0.08);
+    background: var(--surface-soft);
     color: var(--text);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid var(--border);
   }
 
   .primary:hover,
@@ -203,10 +203,10 @@
 </style>
   <meta name="description" content="Wet rot and dry rot treatment from MK Damp and Timber — specialist surveys, targeted treatment and structural repairs to protect your property." />
   <style>
-    :root{--bg:#071019;--panel:rgba(16,25,39,0.95);--accent:#f9bf5e;--muted:#9fb0c6;--text:#eef4fb;--card:rgba(255,255,255,0.03);font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+    :root{--bg:#f4f8ff;--panel:rgba(255,255,255,0.96);--accent:#2563eb;--muted:#4b5c79;--text:#10233d;--border:rgba(15,23,42,0.08);--card:rgba(255,255,255,0.92);font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
     *{box-sizing:border-box}
-    body{margin:0;background:linear-gradient(180deg,#041018,#071019);color:var(--text)}
-    .wrap{max-width:1100px;margin:0 auto;padding:2rem}
+    body{margin:0;background:linear-gradient(180deg,#f8fbff 0%, #edf4ff 42%, #f4f8ff 100%);color:var(--text)}
+    .wrap{width:100%;max-width:var(--max-width);margin:0 auto;padding:1.5rem 1rem 3rem}
     .hero{display:grid;grid-template-columns:1fr;gap:.75rem}
     .hero .title{display:flex;justify-content:space-between;align-items:center}
     h1{margin:0;font-size:2rem}
@@ -222,10 +222,10 @@
     .faq-item{border-radius:10px;margin-bottom:.5rem;border:1px solid rgba(255,255,255,0.03);overflow:hidden}
     .faq-item button{width:100%;text-align:left;padding:1rem;background:transparent;border:0;color:var(--text);display:flex;justify-content:space-between}
     .faq-body{padding:0 1rem 1rem;color:var(--muted);display:none}
-    .cta{margin-top:1rem;padding:1rem;border-radius:12px;background:linear-gradient(90deg, rgba(249,191,94,0.12), rgba(7,14,23,0.95));display:flex;justify-content:space-between;align-items:center}
+    .cta{margin-top:1rem;padding:1rem;border-radius:12px;background:linear-gradient(90deg, rgba(37,99,235,0.12), rgba(255,255,255,0.96));display:flex;justify-content:space-between;align-items:center}
     form.enquiry{margin-top:1rem;display:grid;gap:.6rem}
     input,textarea,select{width:100%;padding:.7rem;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)}
-    button.primary{background:var(--accent);color:#081018;border:none;padding:.7rem 1rem;border-radius:999px;font-weight:800}
+    button.primary{background:var(--accent);color:#ffffff;border:none;padding:.7rem 1rem;border-radius:999px;font-weight:800}
     @media(max-width:900px){.compare{grid-template-columns:1fr}.process{grid-template-columns:1fr}.features{grid-template-columns:1fr}}
   </style>
 
@@ -234,31 +234,31 @@
   
 <nav class="nav-shell" aria-label="Primary site navigation">
   <div class="nav-inner">
-    <a href="index.html" class="brand">MK Damp &amp; Timber LTD</a>
+    <a href="/" class="brand">MK Damp &amp; Timber LTD</a>
     <button class="nav-toggle" aria-expanded="false" aria-label="Open site menu">
       <span></span>
       <span></span>
       <span></span>
     </button>
     <div class="nav-links">
-      <a href="index.html" class="nav-link ">Home</a>
-      <a href="about-us.html" class="nav-link ">About us</a>
+      <a href="/" class="nav-link ">Home</a>
+      <a href="/about-us" class="nav-link ">About us</a>
       <div class="nav-dropdown">
         <button type="button" class="nav-dropdown-toggle" aria-expanded="false">Services</button>
         <div class="nav-dropdown-menu">
-          <a href="damp-survey.html" class="nav-dropdown-link ">Damp survey</a>
-          <a href="damp-proofing.html" class="nav-dropdown-link ">Damp proofing</a>
-          <a href="wet-dry-rot.html" class="nav-dropdown-link active">Wet &amp; dry rot</a>
-          <a href="structural-repairs.html" class="nav-dropdown-link ">Structural repairs</a>
-          <a href="pitched-roofing.html" class="nav-dropdown-link ">Pitched roofing</a>
-          <a href="flat-roofing.html" class="nav-dropdown-link ">Flat roofing</a>
-          <a href="i-beam-fitting.html" class="nav-dropdown-link ">I-beam fitting</a>
+          <a href="/damp-survey" class="nav-dropdown-link ">Damp survey</a>
+          <a href="/damp-proofing" class="nav-dropdown-link ">Damp proofing</a>
+          <a href="/wet-dry-rot" class="nav-dropdown-link active">Wet &amp; dry rot</a>
+          <a href="/structural-repairs" class="nav-dropdown-link ">Structural repairs</a>
+          <a href="/pitched-roofing" class="nav-dropdown-link ">Pitched roofing</a>
+          <a href="/flat-roofing" class="nav-dropdown-link ">Flat roofing</a>
+          <a href="/i-beam-fitting" class="nav-dropdown-link ">I-beam fitting</a>
         </div>
       </div>
-      <a href="gallery.html" class="nav-link ">Gallery</a>
-      <a href="testimonials.html" class="nav-link ">Testimonials</a>
-      <a href="faq.html" class="nav-link ">FAQ</a>
-      <a href="contact-us.html" class="nav-link ">Contact</a>
+      <a href="/gallery" class="nav-link ">Gallery</a>
+      <a href="/testimonials" class="nav-link ">Testimonials</a>
+      <a href="/faq" class="nav-link ">FAQ</a>
+      <a href="/contact-us" class="nav-link ">Contact</a>
     </div>
     <a href="tel:+441923904441" class="nav-action">01923 904441</a>
   </div>
@@ -319,7 +319,7 @@
           <p class="lead">Expert diagnosis and targeted remedial works to protect structural timbers and stop decay before it spreads.</p>
         </div>
         <div style="text-align:right">
-          <a href="tel:+441923904441" style="background:var(--accent);color:#081018;padding:.6rem 1rem;border-radius:999px;font-weight:800;text-decoration:none">Call 01923 904441</a>
+          <a href="tel:+441923904441" style="background:var(--accent);color:#ffffff;padding:.6rem 1rem;border-radius:999px;font-weight:800;text-decoration:none">Call 01923 904441</a>
         </div>
       </div>
     </header>
@@ -411,7 +411,7 @@
         </div>
         <div style="display:flex;gap:.5rem;align-items:center">
           <a href="contact-us.html" style="background:transparent;border:1px solid rgba(255,255,255,0.04);padding:.6rem 1rem;border-radius:999px;color:var(--text);text-decoration:none">Enquire online</a>
-          <a href="tel:+441923904441" style="background:var(--accent);color:#081018;padding:.6rem 1rem;border-radius:999px;font-weight:800;text-decoration:none">Call 01923 904441</a>
+          <a href="tel:+441923904441" style="background:var(--accent);color:#ffffff;padding:.6rem 1rem;border-radius:999px;font-weight:800;text-decoration:none">Call 01923 904441</a>
         </div>
       </section>
 
@@ -434,25 +434,25 @@
   <footer class="site-footer">
   <div class="footer-grid">
     <div class="footer-brand">
-      <a href="index.html" class="footer-logo">MK Damp &amp; Timber LTD</a>
+      <a href="/" class="footer-logo">MK Damp &amp; Timber LTD</a>
       <p>Dependable damp proofing, rot repair and roofing services across Milton Keynes, Watford and London.</p>
     </div>
     <div class="footer-links">
       <h4>Quick links</h4>
-      <a href="about-us.html">About us</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="testimonials.html">Testimonials</a>
-      <a href="contact-us.html">Contact us</a>
+      <a href="/about-us">About us</a>
+      <a href="/gallery">Gallery</a>
+      <a href="/testimonials">Testimonials</a>
+      <a href="/contact-us">Contact us</a>
     </div>
     <div class="footer-services">
       <h4>Services</h4>
-      <a href="damp-survey.html">Damp survey</a>
-      <a href="damp-proofing.html">Damp proofing</a>
-      <a href="wet-dry-rot.html">Wet &amp; dry rot</a>
-      <a href="structural-repairs.html">Structural repairs</a>
-      <a href="pitched-roofing.html">Pitched roofing</a>
-      <a href="flat-roofing.html">Flat roofing</a>
-      <a href="i-beam-fitting.html">I-beam fitting</a>
+      <a href="/damp-survey">Damp survey</a>
+      <a href="/damp-proofing">Damp proofing</a>
+      <a href="/wet-dry-rot">Wet &amp; dry rot</a>
+      <a href="/structural-repairs">Structural repairs</a>
+      <a href="/pitched-roofing">Pitched roofing</a>
+      <a href="/flat-roofing">Flat roofing</a>
+      <a href="/i-beam-fitting">I-beam fitting</a>
     </div>
     <div class="footer-contact">
       <h4>Contact</h4>

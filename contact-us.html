@@ -23,17 +23,17 @@
 
   .primary,
   .btn-primary {
-    background: linear-gradient(135deg, rgba(248, 194, 95, 0.95), rgba(255, 214, 121, 0.85));
-    color: #08101a;
+    background: linear-gradient(135deg, var(--accent), var(--secondary));
+    color: #ffffff;
     border: 1px solid transparent;
   }
 
   .btn-secondary,
   .btn-ghost,
   a.primary {
-    background: rgba(255, 255, 255, 0.08);
+    background: var(--surface-soft);
     color: var(--text);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid var(--border);
   }
 
   .primary:hover,
@@ -205,39 +205,41 @@
 	<meta name="description" content="Contact MK Damp and Timber for damp proofing, timber repairs, roofing and emergency callouts. Call 01923 904441 or 07808 665460." />
 	<style>
 		:root{
-			--bg:#071019; --card:rgba(255,255,255,0.04); --glass:rgba(255,255,255,0.06);
-			--accent:#f9bf5e; --muted:#9fb0c6; --text:#eef4fb; --glass-border:rgba(255,255,255,0.08);
+			--bg:#f4f8ff; --panel:rgba(255,255,255,0.96); --card:rgba(255,255,255,0.92); --glass:rgba(255,255,255,0.92);
+			--accent:#2563eb; --muted:#4b5c79; --text:#10233d; --border:rgba(15,23,42,0.08); --glass-border:rgba(15,23,42,0.08);
 			font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 		}
 		*{box-sizing:border-box}
-		body{margin:0;background:linear-gradient(180deg,#051017 0%, #071019 100%);color:var(--text);}
+		body{margin:0;background:linear-gradient(180deg,#f8fbff 0%, #edf4ff 42%, #f4f8ff 100%);color:var(--text);}
 		a{color:inherit}
-		.wrap{max-width:1200px;margin:0 auto;padding:2rem}
+		.wrap{width:100%;max-width:var(--max-width);margin:0 auto;padding:1.5rem 1rem 3rem}
 		.split{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
-		.left, .right{border-radius:18px;padding:1.5rem;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid var(--glass-border)}
+		.left, .right{border-radius:26px;padding:1.5rem;background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(248,251,255,0.98));border:1px solid var(--border);box-shadow:0 18px 36px rgba(15,23,42,0.08)}
 		h1{margin:0 0 0.5rem;font-size:2.25rem}
 		p.lead{color:var(--muted);margin:0 0 1rem}
 		.contact-cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
-		.card{background:var(--card);padding:1rem;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+		.card{background:rgba(255,255,255,0.92);padding:1rem;border-radius:18px;border:1px solid rgba(15,23,42,0.08);box-shadow:0 12px 24px rgba(15,23,42,0.06)}
 		.card h4{margin:0 0 .35rem;color:var(--accent)}
 		.methods{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
-		.method{background:var(--glass);padding:1rem;border-radius:12px;border:1px solid var(--glass-border);text-align:center}
+		.method{background:rgba(255,255,255,0.92);padding:1rem;border-radius:18px;border:1px solid rgba(15,23,42,0.08);text-align:center;box-shadow:0 12px 24px rgba(15,23,42,0.06)}
 		.method strong{display:block;font-size:1.1rem;color:var(--accent)}
 		/* Glass form */
-		form.contact-form{background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:1.5rem;border-radius:16px;border:1px solid var(--glass-border);backdrop-filter: blur(8px)}
+		form.contact-form{background:linear-gradient(135deg, rgba(255,255,255,0.98), rgba(239,246,255,0.98)); padding:1.5rem;border-radius:24px;border:1px solid rgba(15,23,42,0.08);box-shadow:0 18px 40px rgba(15,23,42,0.10)}
 		.form-row{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:0.75rem}
 		.form-row.full{grid-template-columns:1fr}
-		input, textarea, select{width:100%;padding:0.9rem;border-radius:12px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)}
+		input, textarea, select{width:100%;padding:0.95rem 1rem;border-radius:14px;border:1px solid rgba(37,99,235,0.15);background:rgba(255,255,255,0.95);color:var(--text);box-shadow:inset 0 1px 0 rgba(255,255,255,0.6)}
+		input::placeholder, textarea::placeholder{color:#5b6d88}
 		textarea{min-height:160px;resize:vertical}
 		.form-actions{display:flex;gap:.75rem;align-items:center;flex-wrap:wrap;margin-top:0.5rem}
 		.form-actions .btn{flex:1 1 auto;min-width:0}
-		.btn{display:inline-block;padding:0.95rem 1.35rem;border-radius:999px;border:none;font-weight:700;cursor:pointer}
-		.btn-primary{background:var(--accent);color:#081018}
-		.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
+		.btn{display:inline-flex;align-items:center;justify-content:center;min-height:3.1rem;padding:0.95rem 1.35rem;border-radius:999px;border:none;font-weight:700;cursor:pointer;transition:transform .2s ease, box-shadow .2s ease}
+		.btn:hover{transform:translateY(-1px)}
+		.btn-primary{background:linear-gradient(135deg, var(--accent), #1d4ed8);color:#ffffff;box-shadow:0 12px 24px rgba(37,99,235,0.18)}
+		.btn-ghost{background:rgba(255,255,255,0.92);border:1px solid rgba(37,99,235,0.18);color:var(--text)}
 		.map{margin-top:1rem;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.04)}
 		.business{margin-top:1.25rem;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:1rem;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
-		.emergency{margin-top:1.5rem;background:linear-gradient(90deg, rgba(249,191,94,0.12), rgba(7,14,23,0.9));padding:1rem;border-radius:12px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
-		.emergency .phone{font-weight:800;color:#081018;background:#fff;padding:.6rem 1rem;border-radius:999px}
+		.emergency{margin-top:1.5rem;background:linear-gradient(90deg, rgba(37,99,235,0.12), rgba(255,255,255,0.95));padding:1rem;border-radius:12px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+		.emergency .phone{font-weight:800;color:#ffffff;background:#fff;padding:.6rem 1rem;border-radius:999px}
 		footer{padding:2rem 0;color:var(--muted);text-align:center}
 		@media (max-width:900px){.split{grid-template-columns:1fr;gap:1rem}.contact-cards{grid-template-columns:1fr}.methods{grid-template-columns:1fr}.emergency{flex-direction:column;align-items:flex-start}.left, .right{padding:1.25rem}} 
 		@media (max-width:680px){.wrap{padding:1.25rem}.form-row{grid-template-columns:1fr}.form-actions{flex-direction:column;align-items:stretch}.map iframe{min-height:240px}} 
@@ -247,31 +249,31 @@
 	
 <nav class="nav-shell" aria-label="Primary site navigation">
   <div class="nav-inner">
-    <a href="index.html" class="brand">MK Damp &amp; Timber LTD</a>
+    <a href="/" class="brand">MK Damp &amp; Timber LTD</a>
     <button class="nav-toggle" aria-expanded="false" aria-label="Open site menu">
       <span></span>
       <span></span>
       <span></span>
     </button>
     <div class="nav-links">
-      <a href="index.html" class="nav-link ">Home</a>
-      <a href="about-us.html" class="nav-link ">About us</a>
+      <a href="/" class="nav-link ">Home</a>
+      <a href="/about-us" class="nav-link ">About us</a>
       <div class="nav-dropdown">
         <button type="button" class="nav-dropdown-toggle" aria-expanded="false">Services</button>
         <div class="nav-dropdown-menu">
-          <a href="damp-survey.html" class="nav-dropdown-link ">Damp survey</a>
-          <a href="damp-proofing.html" class="nav-dropdown-link ">Damp proofing</a>
-          <a href="wet-dry-rot.html" class="nav-dropdown-link ">Wet &amp; dry rot</a>
-          <a href="structural-repairs.html" class="nav-dropdown-link ">Structural repairs</a>
-          <a href="pitched-roofing.html" class="nav-dropdown-link ">Pitched roofing</a>
-          <a href="flat-roofing.html" class="nav-dropdown-link ">Flat roofing</a>
-          <a href="i-beam-fitting.html" class="nav-dropdown-link ">I-beam fitting</a>
+          <a href="/damp-survey" class="nav-dropdown-link ">Damp survey</a>
+          <a href="/damp-proofing" class="nav-dropdown-link ">Damp proofing</a>
+          <a href="/wet-dry-rot" class="nav-dropdown-link ">Wet &amp; dry rot</a>
+          <a href="/structural-repairs" class="nav-dropdown-link ">Structural repairs</a>
+          <a href="/pitched-roofing" class="nav-dropdown-link ">Pitched roofing</a>
+          <a href="/flat-roofing" class="nav-dropdown-link ">Flat roofing</a>
+          <a href="/i-beam-fitting" class="nav-dropdown-link ">I-beam fitting</a>
         </div>
       </div>
-      <a href="gallery.html" class="nav-link ">Gallery</a>
-      <a href="testimonials.html" class="nav-link ">Testimonials</a>
-      <a href="faq.html" class="nav-link ">FAQ</a>
-      <a href="contact-us.html" class="nav-link active">Contact</a>
+      <a href="/gallery" class="nav-link ">Gallery</a>
+      <a href="/testimonials" class="nav-link ">Testimonials</a>
+      <a href="/faq" class="nav-link ">FAQ</a>
+      <a href="/contact-us" class="nav-link active">Contact</a>
     </div>
     <a href="tel:+441923904441" class="nav-action">01923 904441</a>
   </div>
@@ -430,25 +432,25 @@
   <footer class="site-footer">
   <div class="footer-grid">
     <div class="footer-brand">
-      <a href="index.html" class="footer-logo">MK Damp &amp; Timber LTD</a>
+      <a href="/" class="footer-logo">MK Damp &amp; Timber LTD</a>
       <p>Dependable damp proofing, rot repair and roofing services across Milton Keynes, Watford and London.</p>
     </div>
     <div class="footer-links">
       <h4>Quick links</h4>
-      <a href="about-us.html">About us</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="testimonials.html">Testimonials</a>
-      <a href="contact-us.html">Contact us</a>
+      <a href="/about-us">About us</a>
+      <a href="/gallery">Gallery</a>
+      <a href="/testimonials">Testimonials</a>
+      <a href="/contact-us">Contact us</a>
     </div>
     <div class="footer-services">
       <h4>Services</h4>
-      <a href="damp-survey.html">Damp survey</a>
-      <a href="damp-proofing.html">Damp proofing</a>
-      <a href="wet-dry-rot.html">Wet &amp; dry rot</a>
-      <a href="structural-repairs.html">Structural repairs</a>
-      <a href="pitched-roofing.html">Pitched roofing</a>
-      <a href="flat-roofing.html">Flat roofing</a>
-      <a href="i-beam-fitting.html">I-beam fitting</a>
+      <a href="/damp-survey">Damp survey</a>
+      <a href="/damp-proofing">Damp proofing</a>
+      <a href="/wet-dry-rot">Wet &amp; dry rot</a>
+      <a href="/structural-repairs">Structural repairs</a>
+      <a href="/pitched-roofing">Pitched roofing</a>
+      <a href="/flat-roofing">Flat roofing</a>
+      <a href="/i-beam-fitting">I-beam fitting</a>
     </div>
     <div class="footer-contact">
       <h4>Contact</h4>
