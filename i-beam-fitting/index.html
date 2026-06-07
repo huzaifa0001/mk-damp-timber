@@ -330,8 +330,13 @@
     dropdownToggle && dropdownToggle.addEventListener('click', function (event) {
       event.stopPropagation();
       const expanded = this.getAttribute('aria-expanded') === 'true';
-      this.setAttribute('aria-expanded', String(!expanded));
-      dropdown.classList.toggle('open');
+      const nextExpanded = !expanded;
+      this.setAttribute('aria-expanded', String(nextExpanded));
+      dropdown.classList.toggle('open', nextExpanded);
+    });
+
+    dropdown && dropdown.addEventListener('click', function (event) {
+      event.stopPropagation();
     });
 
     navLinks.forEach(function (link) {
