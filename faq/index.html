@@ -418,6 +418,353 @@
       </section>
     </main>
     
+<style>
+  :root {
+    --background: #ffffff !important;
+    --bg: #ffffff !important;
+    --surface: rgba(255, 255, 255, 0.98) !important;
+    --surface-soft: rgba(242, 244, 246, 0.98) !important;
+    --panel: rgba(255, 255, 255, 0.98) !important;
+    --card: rgba(255, 255, 255, 0.98) !important;
+    --glass: rgba(255, 255, 255, 0.96) !important;
+    --text: #12355b !important;
+    --muted: #566575 !important;
+    --accent: #f97316 !important;
+    --accent-strong: #d85f0f !important;
+    --secondary: #12355b !important;
+    --border: rgba(18, 53, 91, 0.14) !important;
+    --accent-soft: rgba(249, 115, 22, 0.14) !important;
+    --secondary-soft: rgba(18, 53, 91, 0.1) !important;
+    --shadow: 0 22px 48px rgba(18, 53, 91, 0.14) !important;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    color: #12355b !important;
+  }
+
+  body::before,
+  body::after {
+    display: none !important;
+  }
+
+  .page-shell,
+  .page-content,
+  .wrap,
+  main {
+    background: #ffffff !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  strong,
+  .brand,
+  .footer-logo {
+    color: #12355b !important;
+  }
+
+  p,
+  li,
+  .overview,
+  .faq-body,
+  .faq-answer,
+  .footer-note,
+  .slide-number,
+  .project-card-meta,
+  .preview-cell figcaption {
+    color: #566575 !important;
+  }
+
+  .nav-shell {
+    background: #12355b !important;
+    border-bottom: 0 !important;
+    box-shadow: 0 16px 34px rgba(18, 53, 91, 0.18) !important;
+    width: 100vw !important;
+    max-width: none !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+  }
+
+  .nav-inner {
+    background: #12355b !important;
+    width: 100% !important;
+    max-width: var(--max-width) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .brand,
+  .nav-link,
+  .nav-dropdown-toggle,
+  .nav-action,
+  .nav-toggle span {
+    color: #ffffff !important;
+  }
+
+  .brand::first-letter,
+  .footer-logo::first-letter {
+    color: #f97316;
+  }
+
+  .nav-link:hover,
+  .nav-link.active,
+  .nav-dropdown-toggle:hover,
+  .nav-dropdown.open .nav-dropdown-toggle {
+    background: rgba(249, 115, 22, 0.16) !important;
+    color: #ffffff !important;
+  }
+
+  .nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    bottom: 0.45rem;
+    height: 2px;
+    border-radius: 999px;
+    background: #f97316;
+  }
+
+  .nav-shell .nav-links {
+    background: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .nav-dropdown-menu {
+    background: #ffffff !important;
+    border-color: rgba(18, 53, 91, 0.12) !important;
+  }
+
+  .nav-dropdown-link {
+    color: #12355b !important;
+  }
+
+  .nav-dropdown-link:hover,
+  .nav-dropdown-link.active {
+    background: rgba(249, 115, 22, 0.12) !important;
+    color: #d85f0f !important;
+  }
+
+  .nav-action,
+  .btn,
+  .primary,
+  .btn-primary,
+  button.primary,
+  a.primary,
+  .cta a,
+  .emergency .phone {
+    background: linear-gradient(135deg, #f97316, #d85f0f) !important;
+    border: 1px solid rgba(249, 115, 22, 0.35) !important;
+    color: #ffffff !important;
+    box-shadow: 0 14px 28px rgba(249, 115, 22, 0.24) !important;
+  }
+
+  .btn-secondary,
+  .btn-ghost,
+  .filter-button,
+  .slider-controls button,
+  a.primary[style*="transparent"],
+  button.primary[style*="transparent"] {
+    background: #ffffff !important;
+    border: 1px solid rgba(18, 53, 91, 0.16) !important;
+    color: #12355b !important;
+    box-shadow: none !important;
+  }
+
+  .hero,
+  .hero-header,
+  .hero-panel,
+  .hero-banner,
+  .legal-hero,
+  .statistics-panel,
+  .cta-banner,
+  .cta,
+  .emergency {
+    background:
+      linear-gradient(90deg, rgba(18, 53, 91, 0.94), rgba(18, 53, 91, 0.76)),
+      var(--hero-image, none) !important;
+    border: 1px solid rgba(18, 53, 91, 0.14) !important;
+    box-shadow: 0 24px 48px rgba(18, 53, 91, 0.18) !important;
+  }
+
+  .hero-header {
+    --hero-image: url('https://mkdampandtimber.co.uk/wp-content/uploads/2022/03/Damp-proofing-walls-with-membrane-400x300.jpeg') center/cover no-repeat;
+  }
+
+  .hero::after {
+    background: linear-gradient(180deg, rgba(18, 53, 91, 0.1), rgba(18, 53, 91, 0.9)) !important;
+  }
+
+  .hero h1,
+  .hero h2,
+  .hero h3,
+  .hero p,
+  .hero span,
+  .hero-header h1,
+  .hero-header h2,
+  .hero-header p,
+  .hero-panel h1,
+  .hero-panel h2,
+  .hero-panel p,
+  .hero-banner h1,
+  .hero-banner p,
+  .cta-banner h2,
+  .cta-banner p,
+  .cta strong,
+  .cta small,
+  .emergency strong,
+  .emergency small {
+    color: #ffffff !important;
+  }
+
+  .eyebrow,
+  .section-intro,
+  .section-head .subtitle,
+  .service-pill,
+  .list-badge,
+  .testimonial-meta,
+  .stars span,
+  .stats-card strong,
+  .stat-card strong,
+  .counter-card strong,
+  .card h3,
+  .system-card h3,
+  .benefit strong,
+  .timeline-card strong,
+  .feature-card strong,
+  .card strong,
+  .method strong,
+  .footer-grid h4,
+  .text-accent {
+    color: #f97316 !important;
+  }
+
+  .eyebrow,
+  .service-pill,
+  .list-badge,
+  .anchor-nav a,
+  .filter-button.active,
+  .filter-button:hover {
+    background: rgba(249, 115, 22, 0.12) !important;
+    border-color: rgba(249, 115, 22, 0.35) !important;
+  }
+
+  .card,
+  .panel,
+  .glass-panel,
+  .service-card,
+  .project-card,
+  .preview-cell,
+  .method,
+  .faq-item,
+  .hero-card,
+  .feature-card,
+  .team-card,
+  .timeline-card,
+  .timeline-step,
+  .stats-card,
+  .stat-card,
+  .counter-card,
+  .contact-card,
+  .system-card,
+  .process-card,
+  .benefit,
+  .why-item,
+  .testimonial-panel,
+  .slider,
+  .toc-card,
+  .before-after-card,
+  .trust-grid a {
+    background: #ffffff !important;
+    border: 1px solid rgba(18, 53, 91, 0.12) !important;
+    box-shadow: 0 18px 38px rgba(18, 53, 91, 0.1) !important;
+  }
+
+  .section-light,
+  .anchor-nav,
+  .business,
+  .feature,
+  .process .step,
+  .solutions .item,
+  .detail-list li {
+    background: #f2f4f6 !important;
+    border-color: rgba(18, 53, 91, 0.1) !important;
+  }
+
+  input,
+  textarea,
+  select,
+  .input,
+  .textarea,
+  .select,
+  form.contact-form {
+    background: #ffffff !important;
+    border-color: rgba(18, 53, 91, 0.16) !important;
+    color: #12355b !important;
+  }
+
+  input:focus,
+  textarea:focus,
+  select:focus,
+  .input:focus,
+  .textarea:focus,
+  .select:focus {
+    outline-color: rgba(249, 115, 22, 0.32) !important;
+    border-color: rgba(249, 115, 22, 0.45) !important;
+  }
+
+  .site-footer {
+    background: #12355b !important;
+    border-top: 4px solid #f97316 !important;
+    box-shadow: none !important;
+    width: 100vw !important;
+    max-width: none !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+  }
+
+  .site-footer,
+  .site-footer p,
+  .site-footer a,
+  .site-footer h4,
+  .footer-bottom,
+  .footer-social a {
+    color: #ffffff !important;
+  }
+
+  .site-footer a:hover,
+  .footer-grid h4 {
+    color: #f97316 !important;
+  }
+
+  @media (max-width: 768px) {
+    .nav-toggle {
+      background: rgba(255, 255, 255, 0.08) !important;
+      border-color: rgba(255, 255, 255, 0.2) !important;
+    }
+
+    .nav-links {
+      background: #12355b !important;
+      border-color: rgba(249, 115, 22, 0.3) !important;
+    }
+
+    .nav-links.open .nav-link,
+    .nav-links.open .nav-dropdown-toggle,
+    .nav-close span {
+      color: #ffffff !important;
+      background: rgba(255, 255, 255, 0.08) !important;
+    }
+
+    .nav-close {
+      background: rgba(255, 255, 255, 0.08) !important;
+      border-color: rgba(255, 255, 255, 0.18) !important;
+    }
+  }
+</style>
 <footer class="site-footer">
   <div class="footer-grid">
     <div class="footer-brand">
