@@ -408,11 +408,15 @@ strong {
 .nav-shell {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
   backdrop-filter: blur(18px);
-  background: rgba(255, 255, 255, 0.88);
-  border-bottom: 1px solid var(--border);
-  box-shadow: 0 12px 30px rgba(18, 53, 91, 0.08);
+  background: #12355b;
+  border-bottom: 0;
+  box-shadow: 0 16px 34px rgba(18, 53, 91, 0.18);
+  width: 100vw;
+  max-width: none;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
 
 .nav-inner {
@@ -423,12 +427,13 @@ strong {
   justify-content: space-between;
   gap: 1rem;
   padding: 1rem 1.5rem;
+  background: #12355b;
 }
 
 .brand {
   font-weight: 800;
   letter-spacing: -0.02em;
-  color: var(--accent-strong);
+  color: #ffffff;
 }
 
 .nav-links {
@@ -441,7 +446,7 @@ strong {
 .nav-link, .nav-dropdown-toggle {
   position: relative;
   padding: 0.9rem 1rem;
-  color: var(--text);
+  color: #ffffff;
   border-radius: 999px;
   background: transparent;
   border: none;
@@ -473,13 +478,13 @@ strong {
 }
 
 .nav-link:hover, .nav-dropdown-toggle:hover {
-  background: var(--accent-soft);
-  color: var(--accent-strong);
+  background: rgba(249, 115, 22, 0.16);
+  color: #ffffff;
 }
 
 .nav-link.active {
-  background: linear-gradient(135deg, rgba(249, 115, 22, 0.14), rgba(249, 115, 22, 0.18));
-  color: var(--accent-strong);
+  background: rgba(249, 115, 22, 0.16);
+  color: #ffffff;
 }
 
 .nav-dropdown {
@@ -545,9 +550,9 @@ strong {
   display: none;
   width: 3rem;
   height: 3rem;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.9);
+  background: #f97316;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -558,7 +563,7 @@ strong {
 .nav-toggle span {
   width: 1.4rem;
   height: 0.16rem;
-  background: var(--text);
+  background: #ffffff;
   border-radius: 999px;
 }
 
@@ -675,16 +680,19 @@ strong {
 
 @media (max-width: 768px) {
   .nav-shell {
-    background: rgba(255, 255, 255, 0.92);
+    background: #12355b;
+    box-shadow: 0 14px 30px rgba(18, 53, 91, 0.24);
   }
 
   .nav-inner {
     padding: 0.85rem 1rem;
+    background: #12355b;
   }
 
   .brand {
     max-width: calc(100% - 4rem);
     font-size: clamp(1rem, 4vw, 1.15rem);
+    color: #ffffff;
   }
 
   .nav-links {
@@ -772,7 +780,7 @@ strong {
     margin-bottom: 0.5rem;
     border: 1px solid var(--border);
     border-radius: 16px;
-    background: rgba(255, 255, 255, 0.88);
+    background: rgba(255, 255, 255, 0.08);
     box-shadow: 0 10px 24px rgba(18, 53, 91, 0.08);
   }
 
@@ -781,7 +789,7 @@ strong {
     width: 1.25rem;
     height: 0.16rem;
     border-radius: 999px;
-    background: var(--text);
+    background: #ffffff;
   }
 
   .nav-close span:first-child {
@@ -875,6 +883,7 @@ strong {
     display: flex;
     max-height: none;
     opacity: 1;
+    visibility: visible;
     padding: 0.75rem;
     margin-top: 0.55rem;
     transform: translateY(0);
